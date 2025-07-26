@@ -1,0 +1,90 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+
+#Summary {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: black;
+    font-weight: bold;
+}
+
+#Nombre {
+    color: white;
+    margin: 0;  
+    font-size: clamp(0.8rem, 1rem, 1.5rem);
+    justify-items: flex-start;
+}
+
+.navigator {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+
+.paginas {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: clamp(0.8rem, 1rem, 1.5rem);
+    transition: color 0.5s ease, text-shadow 0.3 ease;
+}
+
+.paginas:hover {
+    color: yellow;
+    text-shadow: 0 0 8px yellow;
+
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+}
+
+.social-icons img {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+#Introductory-Text {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+#Introductory-Text > p {
+        padding: 20px;
+        text-align: justify;
+        font-size: 1.25rem;
+        max-width: 62.5rem;
+}
+
+#Introductory-Text > img {
+        height: 300px;
+        border-radius: 10%;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+}
+
+footer p {
+    color: white;
+    margin-left: 1rem;
+    font-size: clamp(0.7rem, 0.9rem, 1rem);
+}
