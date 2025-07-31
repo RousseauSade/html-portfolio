@@ -10,13 +10,6 @@ html, body {
   box-sizing: border-box; 
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  position: relative; /* Añadido para manejar mejor el footer */
-  box-sizing: border-box;
-}
 
 #Titulo {
     text-align: center;
@@ -136,6 +129,7 @@ body {
     gap: 40px;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding-bottom: 100px;
 }
 
 #Image-Profile {
