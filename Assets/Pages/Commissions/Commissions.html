@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Commission Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+      body {
+        font-family: "Sono", sans-serif;
+        background-color: #fdffe4;
+        margin: 0;
+      }
+
+      .pricing-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+/* navegador */
+
+#Nombre {
+    color: white;
+    margin: 0;  
+    font-size: clamp(0.8rem, 1rem, 1.5rem);
+    justify-items: flex-start;
+}
+
+    .navigator {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: black;
+      padding: 10px 20px;
+      position: relative;
+    }
+    
+    .pages {
+      display: flex;
+      transition: all 0.3s ease;
+    }
+    
+    .paginas {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: clamp(0.8rem, 1rem, 1.5rem);
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    
+    .paginas:hover {
+      color: yellow;
+      text-shadow: 0 0 8px yellow;
+    }
+    
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 21px;
+    }
+    
+    .hamburger span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: white;
+      transition: all 0.3s ease;
+    }
+
+    /* Final de navegador */
+    
+    /* Estilos para móviles */
+    @media (min-width: 100px) and (max-width: 1200px) {
+      .hamburger {
+        display: flex;
+      }
+      
+      .pages {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+      }
+      
+      .pages.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px 0;
+      }
+      
+      .paginas {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /*fin de navegadpr*/
+
+
+
+      /* tamaño telefono */
+      @media (min-width: 200px) and (max-width: 500px) {
+
+        .pricing-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          min-height: 100vh;
+      }
+
+        .pricing-plan {
+          background-color: #f2f2f2;
+          display: flex;
+          padding: 20px;
+          width: auto;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .plan-title{
+          font-size: clamp(0.7rem, 1.5vm, 1.5rem);
+          font-weight: bold;
+          text-decoration: underline;
+          padding-bottom: 10px;
+        }
+
+        .plan-button {
+          font-size: 15px;
+          margin-top: auto;
+          padding: 7px 7px;
+          background-color: #4CAF50;
+          color: white;
+          border-radius: 10px;
+          border-color: transparent;
+          cursor: pointer;
+
+        }
+
+        .plan-price {
+          font-size: clamp(1.7rem, 3vw, 2.3rem);
+          font-weight: bold;
+        }
+
+      }
+      
+    /* tamaño de computador*/
+
+      @media (min-width: 500px) and (max-width: 2040px) {
+        .pricing-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          padding: 20px;
+          min-width: 100%;
+      }
+
+
+
+        .pricing-plan {
+          background-color: #f2f2f2;
+          padding: 10px;
+          width: auto;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 10px;
+
+        }
+
+        .plan-title{
+          font-size: clamp(0.7rem, 1.5vm, 1.5rem);
+          font-weight: bold;
+          text-decoration: underline;
+          padding-bottom: 10px;
+        }
+
+        .plan-button {
+          font-size: 15px;
+          padding: 7px 7px;
+          background-color: #4CAF50;
+          color: white;
+          border-radius: 10px;
+          border-color: transparent;
+          cursor: pointer;
+
+        }
+
+        .plan-price {
+          font-size: clamp(1.7rem, 3vw, 2.3rem);
+          font-weight: bold;
+        }
+
+      } 
+
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 7px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.social-icons a {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.copyright {
+  color: white;
+  margin: 0;
+  font-size: clamp(0.7rem, 0.9rem, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+footer:hover {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    gap: 8px;
+  }
+  
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .copyright {
+    font-size: 0.7rem;
+  }
+}
+
+
+    </style>
+    
+        <div class="navigator">
+        <p id="Nombre">Rousseau Sade</p>
+            <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+        <div class="pages">
+      <a href="../../../index.html" class="paginas">Home</a>
+      <a href="../Education/education.html" class="paginas">Education</a>
+      <a href="../Experience/experience.html" class="paginas">Experience</a>
+      <a href="../Hobbies/hobbies.html" class="paginas">Hobbies</a>
+      <a href="../Skills/skills.html" class="paginas">Skills</a>
+      <a href="../Commissions/Commissions.html" class="paginas">Commissions</a>
+      <a href="../About/about.html" class="paginas">About me</a>
+      <a href="../Contact/contact.html" class="paginas">Contact me</a>
+        </div>
+    </div>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="pricing-container">
+        <div class="pricing-plan">
+          <div class="plan-title">Basic</div>
+          <div class="plan-price">$9.99/month</div>
+          <ul class="plan-features">
+            <li>✅ 10GB Storage</li>
+            <li>✅ 1 User</li>
+            <li>🚫 Support</li>
+          </ul>
+          <button class="plan-button">Sign Up</button>
+        </div>
+        <div class="pricing-plan">
+          <div class="plan-title">Standard</div>
+          <div class="plan-price">$19.99/month</div>
+          <ul class="plan-features">
+            <li>✅ 50GB Storage</li>
+            <li>✅ 5 Users</li>
+            <li>✅ Phone &amp; Email Support</li>
+          </ul>
+          <button class="plan-button">Sign Up</button>
+        </div>
+        <div class="pricing-plan">
+          <div class="plan-title">Premium</div>
+          <div class="plan-price">$49.99/month</div>
+          <ul class="plan-features">
+            <li>✅ 100GB Storage</li>
+            <li>✅ 10 Users</li>
+            <li>✅ 24/7 Support</li>
+          </ul>
+          <button class="plan-button">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const pages = document.querySelector('.pages');
+      
+      hamburger.addEventListener('click', function() {
+        this.classList.toggle('active');
+        pages.classList.toggle('active');
+      });
+    });
+    </script>
+  </body>
+    <footer>
+      <div class="footer-container">
+        <div class="social-icons">
+          <a href="https://www.tiktok.com/@rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
+          <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+          <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+          <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+        </div>
+        <p class="copyright">Rousseau Sade / Copyright © 2025 All rights reserved.</p>
+      </div>
+    </footer>
+</html>

@@ -7,31 +7,63 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-        <div class="navigator">
-        <p id="Nombre">Rousseau Sade</p>
-        <div class="pages">
-        <a href="./Assets/Pages/Education/education.html" class="paginas">Education</a>
-        <a href="./Assets/Pages/Experience/experience.html" class="paginas">Experience</a>
-        <a href="./Assets/Pages/Hobbies/hobbies.html" class="paginas">Hobbies</a>
-        <a href="./Assets/Pages/Skills/skills.html" class="paginas">Skills</a>
-        <a href="./Assets/Pages/About/about.html" class="paginas">About me</a>
-        <a href="./Assets/Pages/Contact/contact.html" class="paginas">Contact me</a>
-        </div>
+  <div class="navigator">
+    <p id="Nombre">Rousseau Sade</p>
+    
+    <!-- Icono hamburguesa -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+    
+    <!-- Menú de navegación -->
+    <div class="pages" id="pages">
+      <a href="index.html" class="paginas">Home</a>
+      <a href="./Assets/Pages/Education/education.html" class="paginas">Education</a>
+      <a href="./Assets/Pages/Experience/experience.html" class="paginas">Experience</a>
+      <a href="./Assets/Pages/Hobbies/hobbies.html" class="paginas">Hobbies</a>
+      <a href="./Assets/Pages/Skills/skills.html" class="paginas">Skills</a>
+      <a href="./Assets/Pages/Commissions/Commissions.html" class="paginas">Commissions</a>
+      <a href="./Assets/Pages/About/about.html" class="paginas">About me</a>
+      <a href="./Assets/Pages/Contact/contact.html" class="paginas">Contact me</a>
+    </div>
+  </div>
+        <div id="Titulo">
             <h1 id="Summary">Summary</h1>
+        </div>
     <div id="Introductory-Text">
-        <img id="Image-Profile" src="./Assets/Images/Photo_Profile.png" alt="My photo" height="300">
-    <p>Web Developer with a passion for creating dynamic and responsive web applications. 
-       Experienced in HTML, CSS, JavaScript, and various frameworks. Committed to delivering high-quality code and user-friendly interfaces.</p> 
-    </div>
-    <footer>
-            <div class="social-icons">
-            <a href="https://www.tiktok.com/@rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
-            <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-            <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
-            <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
-            <p>Rousseau Sade / Copyright © 2025 All rights reserved. </p>
-    </div>
-    </footer>
+
+            <div id="Image-Text">
+                <img id="Image-Profile" src="./Assets/Images/Photo_Profile.png" alt="My photo">
+                <div id="Text">
+                    <p>Web Developer with a passion for creating dynamic and responsive web applications. 
+                    Experienced in HTML, CSS, JavaScript, and various frameworks. Committed to delivering high-quality 
+                    code and user-friendly interfaces.</p>
+                </div>
+            </div>
+        </div>
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const pages = document.querySelector('.pages');
+    
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('active');
+      pages.classList.toggle('active');
+    });
+  });
+ </script>
 </body>
+<footer>
+  <div class="footer-container">
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
+      <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+      <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+      <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+    </div>
+    <p class="copyright">Rousseau Sade / Copyright © 2025 All rights reserved.</p>
+  </div>
+</footer>
 </html>
