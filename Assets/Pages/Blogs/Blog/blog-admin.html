@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración - Blog</title>
+  <link rel="stylesheet" href="../CSS/blog-admin.css"/>
+  <link rel="icon" href="../Assets/Images/icon.svg"/>
+</head>
+<body>
+  <div class="navigator">
+    <div class="Icono">
+      <img src="../Assets/Images/icon.svg" alt="Icono de pagina"/>
+      <p id="Nombre">Rousseau Sade - Admin</p>
+    </div>
+
+        <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="pages">
+      <a href="../blog.html" class="paginas">Volver al Sitio</a>
+      <a href="#" id="new-post-btn" class="paginas">Nuevo Post</a>
+      <a href="#" id="manage-posts-btn" class="paginas">Gestionar Posts</a>
+    </div>
+  </div>
+
+  <div class="admin-panel">
+    <div id="new-post-section">
+      <h1>Crear Nuevo Post</h1>
+      <div class="editor-container">
+        <div class="editor-main">
+          <div class="form-group">
+            <label for="post-title">Título del Post</label>
+            <input type="text" id="post-title" placeholder="Escribe el título aquí"/>
+          </div>
+
+          <div class="editor-toolbar">
+            <button data-command="bold"><b>Negrita</b></button>
+            <button data-command="italic"><i>Cursiva</i></button>
+            <button data-command="insertUnorderedList">Lista</button>
+            <button data-command="createLink">Enlace</button>
+            <button data-command="insertImage">Imagen</button>
+            <button data-command="justifyLeft">Alinear Izq.</button>
+            <button data-command="justifyCenter">Centrar</button>
+            <button data-command="justifyRight">Alinear Der.</button>
+          </div>
+
+          <div id="post-content" contenteditable="true"></div>
+
+          <div class="form-group">
+            <label for="post-excerpt">Resumen (opcional)</label>
+            <textarea id="post-excerpt" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="editor-sidebar">
+          <h3>Publicación</h3>
+          <div class="form-group">
+            <label for="post-status">Estado</label>
+            <select id="post-status">
+              <option value="publish">Publicar</option>
+              <option value="draft">Borrador</option>
+            </select>
+          </div>
+          <button id="publish-btn">Publicar</button>
+          <button id="export-json-btn">Exportar posts.json</button>
+
+          <h3>Categoría</h3>
+          <div class="form-group">
+            <select id="post-category">
+              <option value="estudios">Estudios</option>
+              <option value="personal">Personal</option>
+              <option value="ideas">Ideas</option>
+              <option value="escritos">Escritos</option>
+            </select>
+          </div>
+
+          <h3>Imagen destacada</h3>
+          <div class="form-group">
+            <img id="featured-image-preview" src="" style="display:none; max-width:100%;"/>
+            <button id="upload-image-btn">Seleccionar Imagen</button>
+            <input type="file" id="image-upload" accept="image/*" style="display:none;"/>
+          </div>
+
+          <h3>Vista previa</h3>
+          <div class="preview-pane" id="post-preview"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="manage-posts-section" class="hidden">
+      <h1>Gestionar Posts</h1>
+      <table id="posts-table">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Categoría</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="../JS/blog-admin.js"></script>
+</body>
+</html>

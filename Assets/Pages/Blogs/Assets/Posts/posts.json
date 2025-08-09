@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Mi primer post",
+    "excerpt": "Este es un resumen de prueba.",
+    "category": "ideas",
+    "date": "7 de agosto de 2025",
+    "slug": "mi-primer-post"
+  },
+  {
+    "title": "Post personal",
+    "excerpt": "Un post sobre mi vida.",
+    "category": "personal",
+    "date": "6 de agosto de 2025",
+    "slug": "post-personal"
+  }
+]

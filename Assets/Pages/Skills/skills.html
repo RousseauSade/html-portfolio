@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Skils</title>
+    <link rel="icon" href="./Assets/Images/icon.svg">
 
 <style>
 html, body {
@@ -18,96 +19,332 @@ html, body {
   box-sizing: border-box; 
 }
 
-/* navegador */
-
-#Nombre {
-    color: white;
-    margin: 0;  
-    font-size: clamp(0.8rem, 1rem, 1.5rem);
-    justify-items: flex-start;
+/* Navegador */
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
 }
 
-    .navigator {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: black;
-      padding: 10px 20px;
-      position: relative;
-    }
-    
-    .pages {
-      display: flex;
-      transition: all 0.3s ease;
-    }
-    
-    .paginas {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: clamp(0.8rem, 1rem, 1.5rem);
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-    
-    .paginas:hover {
-      color: yellow;
-      text-shadow: 0 0 8px yellow;
-    }
-    
-    .hamburger {
-      display: none;
-      cursor: pointer;
-      flex-direction: column;
-      justify-content: space-around;
-      width: 30px;
-      height: 21px;
-    }
-    
-    .hamburger span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background-color: white;
-      transition: all 0.3s ease;
-    }
+.Icono {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
-    /* Final de navegador */
-    
-    /* Estilos para móviles */
-    @media (min-width: 100px) and (max-width: 1200px) {
-      .hamburger {
-        display: flex;
-      }
-      
-      .pages {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: black;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-      }
-      
-      .pages.active {
-        max-height: 500px;
-        opacity: 1;
-        padding: 10px 0;
-      }
-      
-      .paginas {
-        padding: 10px 0;
-        width: 100%;
-        text-align: center;
-      }
-    }
+.Icono > img {
+  max-width: 20%;
+  max-height: 20%;
+}
 
-    /*fin de navegadpr*/
+#Nombre {
+  color: white;
+  margin: 0;
+  font-size: clamp(0.8rem, 1rem, 1.5rem);
+}
 
+.pages {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.paginas {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: clamp(0.8rem, 1rem, 1.5rem);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.paginas:hover {
+  color: yellow;
+  text-shadow: 0 0 8px yellow;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Estilos para móviles */
+@media (min-width: 100px) and (max-width: 1200px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .pages {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+  }
+  
+  .pages.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 0;
+  }
+  
+  .paginas {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/*Fin de navegador*/
+
+/* ---------------------------------- */
+/* Sección Skills con Video de Fondo */
+/* ---------------------------------- */
+
+.Skills {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+  background-color: #000; /* Fondo de respaldo */
+}
+
+.items {
+  color: #3498db;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Contenedor del video de fondo */
+.skills-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: strectch(100%);
+  height: stretch(100%);
+  z-index: 0;
+  overflow: hidden;
+}
+
+.skills-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Capa overlay para mejor legibilidad */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
+}
+
+/* Contenedor principal */
+.Container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* Título */
+#Titulo {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: white;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: underline;
+}
+
+#Titulo::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  border-radius: 3px;
+}
+
+/* Lista de Skills */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Items individuales */
+.skill-item {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto hover */
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Posicionamiento alternado */
+.skill-item.left {
+  margin-right: auto;
+  border-left: 4px solid #3498db;
+}
+
+.skill-item.right {
+  margin-left: auto;
+  border-right: 4px solid #9b59b6;
+}
+
+/* Contenido */
+.skill-item p {
+  font-size: clamp(0.9rem, 1.7vw, 1.2rem);
+  line-height: 1.6;
+  margin: 0 20px;
+  color: #fff;
+  flex: 1;
+}
+
+.skill-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* Efectos decorativos */
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  z-index: -1;
+}
+
+/* Burbujas decorativas */
+.skill-item::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52,152,219,0.1) 0%, rgba(52,152,219,0) 70%);
+  z-index: -2;
+}
+
+.skill-item.left::after {
+  bottom: -20px;
+  left: -20px;
+}
+
+.skill-item.right::after {
+  top: -20px;
+  right: -20px;
+}
+
+/* ---------------------------------- */
+/* Responsive Design */
+/* ---------------------------------- */
+@media (max-width: 992px) {
+  .skill-item {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-video-bg {
+    display: none;
+  }
+  
+  .Skills {
+    background: url('./Assets/Images/fallback-mobile.jpg') center/cover no-repeat;
+  }
+  
+  .skill-item {
+    width: 95%;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .skill-item img {
+    margin-bottom: 15px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .skill-item.left, 
+  .skill-item.right {
+    margin: 0 auto;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #9b59b6;
+  }
+  
+  .Container {
+    padding: 20px;
+    backdrop-filter: blur(5px);
+  }
+}
+
+@media (max-width: 480px) {
+  #Titulo {
+    font-size: 1.8rem;
+  }
+  
+  .skill-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer */
 footer {
   bottom: 0;
   left: 0;
@@ -180,14 +417,21 @@ footer:hover {
   }
 }
 
+
     </style>
 
 </head>
 <body>
 
-    <div class="navigator">
-        <p id="Nombre">Rousseau Sade</p>
-            <div class="hamburger" id="hamburger">
+<!-- Navegacion -->
+  <div class="navigator">
+    <div  class="Icono">
+    <img src="./Assets/Images/icon.svg" alt="Icono de pagina">
+    <p id="Nombre">Rousseau Sade</p>
+    </div>
+    
+    <!-- Icono hamburguesa -->
+    <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
@@ -200,38 +444,72 @@ footer:hover {
       <a href="../Hobbies/hobbies.html" class="paginas">Hobbies</a>
       <a href="../Skills/skills.html" class="paginas">Skills</a>
       <a href="../Commissions/Commissions.html" class="paginas">Commissions</a>
+      <a href="../Blogs/blog.html" class="paginas">Blog</a>
       <a href="../About/about.html" class="paginas">About me</a>
       <a href="../Contact/contact.html" class="paginas">Contact me</a>
         </div>
     </div>
 
-    <h1>Skills</h1>
-        <ul>
-            <li><p>HTML, i use it most of the time in web development</p></li>
-                <a href="./Assets/HTML/HTML.html"><img src="./Assets/Images/HTML5.png" alt="Logo of HTML" height="80" width="80"> </a>
+<!-- Fin de navegacion -->
 
-            <li><p>C++, i use it most of the time to program in unity or Unreal Engine</p></li>
-                <a href="./Assets/C++/C++.html"><img src="./Assets/Images/C++.png" alt="Logo of C++" height="80" width="80"> </a>
+<!-- Skills -->
+<div class="Skills">
 
-            <li><p>Java, use it most of the time to make simple program to make a specific function</p></li>
-                <a href="./Assets/Java/Java.html"><img src="./Assets/Images/Java.png" alt="Logo of Java" height="80" width="80"> </a>
+  <!-- Video de fondo SOLO para esta sección -->
+  <div class="skills-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./Assets/Images/fondo.webm" type="video/webm">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
 
-            <li><p>Python, use it most of the time to make simple program to make a specific function</p></li>
-                <a href="./Assets/Python/Python.html"><img src="./Assets/Images//Python.jpg" alt="" height="80" width="80"> </a>
+  <div class="Container">
+    <h1 id="Titulo">Skills</h1>
+    <div class="skills-list">
+      <div class="skill-item left" id="Html">
+        <a href="./Assets/HTML/HTML.html"><img src="./Assets/Images/HTML5.png" alt="Logo of HTML"></a>
+        <p><strong class="items">HTML</strong>, i use it most of the time in web development</p>
+      </div>
+      
+      <div class="skill-item right" id="C">
+        <a href="./Assets/C++/C++.html"><img src="./Assets/Images/C++.png" alt="Logo of C++"></a>
+        <p><strong class="items">C++</strong>, i use it most of the time to program in unity or Unreal Engine</p>
+      </div>
+      
+      <div class="skill-item left" id="Java">
+        <a href="./Assets/Java/Java.html"><img src="./Assets/Images/Java.png" alt="Logo of Java"></a>
+        <p><strong class="items">Java</strong>, use it most of the time to make simple program to make a specific function</p>
+      </div>
+      
+      <div class="skill-item right" id="Python">
+        <a href="./Assets/Python/Python.html"><img src="./Assets/Images//Python.jpg" alt="Logo of Python"></a>
+        <p><strong class="items">Python</strong>, use it most of the time to make simple program to make a specific function</p>
+      </div>
+      
+      <div class="skill-item left" id="Power_BI">
+        <a href="./Assets/PowerBi/Powerb.html"><img src="./Assets/Images/Power_BI.png" alt="Logo of Power BI"></a>
+        <p><strong class="items">Power Bi</strong>, i can make graphical informs and public them.</p>
+      </div>
+      
+      <div class="skill-item right" id="Word">
+        <a href="./Assets/Word/Word.html"><img src="./Assets/Images/Word.png" alt="Logo of Word"></a>
+        <p><strong class="items">Word</strong>, i use it most of this progrma to make carts or correspondence</p>
+      </div>
+      
+      <div class="skill-item left" id="Excel"> 
+        <a href="./Assets/Excel/Excel.html"><img src="./Assets/Images/Excel.png" alt="Logo of Excel"></a>
+        <p><strong class="items">Excel</strong>, i know most of the formulas and i use Power Query if it's necessary</p>
+      </div>
+      
+      <div class="skill-item right" id="Davinci">
+        <a href="./Assets/Davinci/Davinci.html"><img src="./Assets/Images/DaVinci_Resolve.png" alt="Logo of Davinci Resolve"></a>
+        <p><strong class="items">Davinci Resolve</strong>, i then to make videos or animation it depends of what i need</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <li><p>Power Bi, i can make graphical informs and public them.</p></li>
-                <a href="./Assets/PowerBi/Powerb.html"><img src="./Assets/Images/Power_BI.png" alt="" height="80" width="80"> </a>
-
-            <li><p>Word, i use it most of this progrma to make carts or correspondence</p></li>
-                <a href="./Assets/Word/Word.html"><img src="./Assets/Images/Word.png" alt="" height="80" width="80"> </a>
-
-            <li><p>Excel, i know most of the formulas and i use Power Query if it's necessary</p></li>
-                <a href="./Assets/Excel/Excel.html"><img src="./Assets/Images/Excel.png" alt="" height="80" width="80"> </a>
-
-            <li><p>Davinci Resolve, i then to make videos or animation it depends of what i need</p></li>
-                <a href="./Assets/Davinci/Davinci.html"><img src="./Assets/Images/DaVinci_Resolve.png" alt="" height="80" width="80"> </a>
-        </ul>
-
+<!-- Fin de skills -->
     <script>
             document.addEventListener('DOMContentLoaded', function() {
         const hamburger = document.querySelector('.hamburger');

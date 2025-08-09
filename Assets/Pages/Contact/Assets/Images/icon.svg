@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="20" fill="#111"></rect>
+  
+  <!-- Brackets -->
+  <path d="M30 35C30 25 50 25 50 35V85C50 95 30 95 30 85" stroke="#00FF88" stroke-width="6" stroke-linecap="round"></path>
+  <path d="M90 35C90 25 70 25 70 35V85C70 95 90 95 90 85" stroke="#00FF88" stroke-width="6" stroke-linecap="round"></path>
+  
+  <!-- Diamond (pen nib) -->
+  <path d="M60 42L67 60L60 78L53 60L60 42Z" fill="#00FF88"></path>
+
+  <!-- Small black circle in center -->
+  <circle cx="60" cy="60" r="3" fill="#111"></circle>
+</svg>
