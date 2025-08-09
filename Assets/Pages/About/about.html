@@ -14,6 +14,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: beige;
 }
 
 * {
@@ -89,28 +90,90 @@ html, body {
   transition: all 0.3s ease;
 }
 
-/* Video Background Styles */
-.skills-video-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+
+/* About Section */
+.About {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  color: #333;
+  line-height: 1.6;
 }
 
-.skills-video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.About h1 {
+  font-size: 2.5rem;
+  color: #222;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
 }
 
-.video-overlay {
+.About h1::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background-color: yellow;
+  border-radius: 3px;
+}
+
+.About img {
+  display: block;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.About img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.About p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.About strong p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #444;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 0, 0.1);
+  border-left: 3px solid yellow;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .About {
+    padding: 0 1.5rem;
+  }
+  
+  .About h1 {
+    font-size: 2rem;
+  }
+  
+  .About p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .About {
+    padding: 0 1rem;
+  }
+  
+  .About img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Footer */
@@ -280,6 +343,7 @@ footer {
     </div>
   </div>
 
+  <div class="About">
   <h1>About me</h1>
   <img src="./Assets/Images/Cooking.gif" alt="Cat programming" height="300" width="300">
     <p>Hi, I'm Rousseau Sade — a passionate self-taught learner who thrives at the intersection of technology, creativity, and critical thinking.<br>
@@ -296,7 +360,9 @@ footer {
       even the uncertain ones, brings me closer to who I want to become.</p>
 
   <strong><p>Thanks for reading</p></strong>
-<img src="./Assets/Images/Trump.gif" alt="Trump Approval">
+  <img src="./Assets/Images/Trump.gif" alt="Trump Approval">
+</div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

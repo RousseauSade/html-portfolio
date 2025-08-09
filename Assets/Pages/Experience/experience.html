@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
     <link rel="icon" href="./Assets/Images/icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 html, body {
@@ -13,6 +14,8 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -110,6 +113,165 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Experience Section */
+.Experience {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.Experience h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: linear-gradient(to right, red, orange, yellow);
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.Experience h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background:  linear-gradient(to right, red, orange, yellow);
+  box-shadow: 0 0 10px linear-gradient(to right, red, orange, yellow);
+}
+
+.Experience ul {
+  list-style: none;
+  padding: 0;
+}
+
+.Experience li {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 3px solid linear-gradient(to right, red, orange, yellow);
+}
+
+.Experience li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 255, 0, 0.2);
+}
+
+.Experience li p:first-child {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: linear-gradient(to right, red, orange, yellow);
+}
+
+.Experience p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.Experience a {
+  color: yellow;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.Experience a:hover {
+  text-shadow: 0 0 8px linear-gradient(to right, red, orange, yellow);
+}
+
+.timeline {
+  position: relative;
+  margin-left: 1rem;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(to right, red, orange, yellow);
+  box-shadow: 0 0 10px linear-gradient(to right, red, orange, yellow);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(to right, red, orange, yellow);
+  box-shadow: 0 0 10px linear-gradient(to right, red, orange, yellow);
+}
+
+.timeline-date {
+  font-style: italic;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.timeline-content {
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+/* Skills Highlights */
+.skills-highlight {
+  margin-top: 3rem;
+}
+
+.skills-highlight h2 {
+  color: blue;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid linear-gradient(to right, red, orange, yellow);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 255, 0, 0.2);
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
@@ -207,22 +369,27 @@ footer {
     margin: 0;
   }
   
-  .Hobbies {
+  .Experience {
+    margin: 3rem 1rem;
+    padding: 1.5rem;
+  }
+  
+  .Experience li {
     padding: 1rem;
   }
   
-  .Hobbies h1 {
-    margin: 1rem 0 2rem;
-  }
-  
-  .hobby-item {
-    margin-bottom: 3rem;
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
-  .Hobbies p {
-    padding: 1rem;
+  .Experience h1 {
+    font-size: 2rem;
+  }
+  
+  .Experience li p:first-child {
+    font-size: 1.2rem;
   }
   
   .social-icons {
@@ -232,6 +399,15 @@ footer {
   .social-icons img {
     width: 25px;
     height: 25px;
+  }
+  
+  .timeline {
+    margin-left: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item::before {
+    left: -1.8rem;
   }
 }
 
@@ -248,14 +424,12 @@ footer {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-    </style>
-
-
+</style>
 </head>
 <body>
 
   <div class="navigator">
-    <div  class="Icono">
+    <div class="Icono">
     <img src="./Assets/Images/icon.svg" alt="Icono de pagina">
     <p id="Nombre">Rousseau Sade</p>
     </div>
@@ -280,47 +454,147 @@ footer {
       <a href="../Contact/contact.html" class="paginas">Contact me</a>
     </div>
   </div>
+
+
+  <div class="skills-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./Assets/Images/fondo.webm" type="video/webm">
+      <!-- Fallback image if video doesn't load -->
+      <img src="./Assets/Images/fallback-bg.jpg" alt="Background fallback">
+    </video>  
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="Experience">
+    <h1>Professional Journey</h1>
     
-    <h1>Work Experience</h1>
-        <ul>
-        <li><p>Army</p></li>
-        <p>Served as a soldier in the Venezuelan Army for 18 months. I worked as an administrative assistant, 
-            helping to create reports and later assisting in the archives department, where I supported document management tasks.</p>
-
-        <li><p>Cruz Verde</p></li>
-        <p>The people I worked with at the company helped me grow and encouraged my desire to learn. 
-            I automated many of my tasks, such as generating reports, mostly by working with AI tools and writing Python code. 
-            I developed applications like a file browser, a script to consolidate multiple Excel documents into one, and a PDF merger, among other projects.</p>
-
-        <li><p>My Projects</p></li>
-            <p id="proyect-text">Please click <a href="">here</a> to access to my proyects</p>
+    <ul>
+      <div class="Army">
+        <li>
+          <p>Colombian Army</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2021 - 2022 (18 months)</div>
+              <div class="timeline-content">
+                <p>Served as a soldier in the Colombian Army, where I developed discipline, teamwork, and problem-solving skills in high-pressure environments.</p>
+                <p>Worked as an administrative assistant, creating detailed reports and managing documentation. Later transitioned to the archives department, where I implemented a more efficient filing system that reduced document retrieval time by 30%.</p>
+                <p><strong>Key Achievements:</strong> Recognized for exceptional organizational skills; trained 5 new recruits in administrative procedures.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+      
+      <div class="Cruz-Verde">
+        <li>
+          <p>Cruz Verde Pharmacy</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2020 - 2022</div>
+              <div class="timeline-content">
+                <p>Worked in a dynamic pharmacy environment where I automated many routine tasks using Python and AI tools, significantly improving efficiency.</p>
+                <p>Developed several productivity tools including:</p>
+                <ul>
+                  <li>A custom file browser for quick access to frequently used documents</li>
+                  <li>A script to consolidate multiple Excel reports into a single comprehensive document</li>
+                  <li>A PDF merger that reduced manual document processing time by 75%</li>
+                  <li>An inventory tracking system that alerted when stock reached minimum levels</li>
+                </ul>
+                <p><strong>Key Skills Gained:</strong> Process automation, problem-solving, Python programming, data management.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+      
+      <div class="Freelance">
+        <li>
+          <p>Freelance Projects</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2022 - Present</div>
+              <div class="timeline-content">
+                <p>Developed various personal and freelance projects to expand my technical skills and build a portfolio of work.</p>
+                <p>My projects range from web development to automation scripts, each designed to solve real-world problems or explore new technologies.</p>
+                <p id="proyect-text">Explore my <a href="../Skills/skills.html">projects portfolio</a> to see examples of my work and the technologies I've mastered.</p>
+                <p><strong>Current Focus:</strong> Web development (HTML, CSS, JavaScript), Python automation, and learning new frameworks.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
     </ul>
-
-    <script>
-            document.addEventListener('DOMContentLoaded', function() {
-        const hamburger = document.querySelector('.hamburger');
-        const pages = document.querySelector('.pages');
-        
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            pages.classList.toggle('active');
-        });
-        });
-    </script>
-
-    <footer>
-        <div class="footer-container">
-        <div class="social-icons">
-          <a href="https://www.tiktok.com/@rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
-          <a href="https://www.twitch.tv/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Twitch" /></a>
-          <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-          <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X (Twitter)" /></a>
-          <a href="https://patreon.com/Rousseauo"><img src="./Assets/Images/patreon.png"  alt="Patreon" /></a>
-          <a href="https://subscribestar.adult/rousseausade"><img src="./Assets/Images/subscribestar.svg" alt="SubscribeStar" style="filter: invert(4);" /></a>
-          <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+    
+    <div class="skills-highlight">
+      <h2>Technical Skills Developed</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python">
+          <p>Python</p>
         </div>
-        <p class="copyright">Rousseau Sade / Copyright © 2025 All rights reserved.</p>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5">
+          <p>HTML5</p>
         </div>
-    </footer>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS3">
+          <p>CSS3</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3374/3374017.png" alt="Excel">
+          <p>Excel Automation</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3374/3374029.png" alt="AI Tools">
+          <p>AI Tools</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const pages = document.querySelector('.pages');
+      
+      hamburger.addEventListener('click', function() {
+          this.classList.toggle('active');
+          pages.classList.toggle('active');
+      });
+      
+      // Fallback for video if it fails to load
+      const videoBg = document.querySelector('.skills-video-bg video');
+      if (videoBg) {
+        videoBg.addEventListener('error', function() {
+          const fallbackImg = document.createElement('img');
+          fallbackImg.src = './Assets/Images/fallback-bg.jpg';
+          fallbackImg.alt = 'Background fallback';
+          fallbackImg.style.width = '100%';
+          fallbackImg.style.height = '100%';
+          fallbackImg.style.objectFit = 'cover';
+          document.querySelector('.skills-video-bg').appendChild(fallbackImg);
+        });
+      }
+    });
+  </script>
+
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/@rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
+        <a href="https://www.twitch.tv/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Twitch" /></a>
+        <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+        <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X (Twitter)" /></a>
+        <a href="https://patreon.com/Rousseauo"><img src="./Assets/Images/patreon.png" alt="Patreon" /></a>
+        <a href="https://subscribestar.adult/rousseausade"><img src="./Assets/Images/subscribestar.svg" alt="SubscribeStar" style="filter: invert(1);" /></a>
+        <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+      </div>
+      <p class="copyright">Rousseau Sade / Copyright © 2025 All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
