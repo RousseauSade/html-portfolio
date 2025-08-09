@@ -141,6 +141,7 @@ html, body {
   color: white;
   margin: 0;
   font-size: clamp(0.8rem, 1rem, 1.5rem);
+  font-weight: 500;
 }
 
 .pages {
@@ -154,11 +155,14 @@ html, body {
   margin: 0 10px;
   font-size: clamp(0.8rem, 1rem, 1.5rem);
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 5px 5px;
+  border-radius: 4px;
 }
 
 .paginas:hover {
   color: yellow;
   text-shadow: 0 0 8px yellow;
+  background-color: rgba(255, 255, 0, 0.1);
 }
 
 .hamburger {
@@ -203,6 +207,8 @@ footer {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .social-icons a {
@@ -219,6 +225,11 @@ footer {
   width: 30px;
   height: 30px;
   transition: transform 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.social-icons img:hover {
+  filter: brightness(1.2);
 }
 
 .copyright {
@@ -228,6 +239,7 @@ footer {
   font-weight: 300;
   letter-spacing: 0.5px;
   text-align: center;
+  opacity: 0.8;
 }
 
 /* Media Queries */
@@ -254,54 +266,53 @@ footer {
   .pages.active {
     max-height: 500px;
     opacity: 1;
-    padding: 10px 0;
+    padding: 20px 0;
   }
   
   .paginas {
-    padding: 10px 0;
+    padding: 15px 0;
     width: 100%;
     text-align: center;
+    margin: 0;
+  }
+  
+  .Hobbies {
+    padding: 1rem;
+  }
+  
+  .Hobbies h1 {
+    margin: 1rem 0 2rem;
+  }
+  
+  .hobby-item {
+    margin-bottom: 3rem;
   }
 }
 
 @media (max-width: 768px) {
-  #Image-Text {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+  .Hobbies p {
+    padding: 1rem;
   }
   
-  #Image-Profile {
-    height: 250px;
-    max-height: none;
-  }
-  
-  #Text {
-    text-align: center;
-    padding: 0 15px;
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
-  }
-
-  .skills-video-bg video {
-    opacity: 0.3;
-  }
-
-  #Image-Text {
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-}
-
-@media (max-width: 480px) {
-  #Titulo {
-    font-size: 1.8rem;
-  }
-
   .social-icons {
     gap: 1rem;
   }
-
+  
   .social-icons img {
     width: 25px;
     height: 25px;
   }
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
