@@ -142,6 +142,26 @@
       categoriesList.appendChild(li);
     });
   }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const pages = document.querySelector('.pages');
+        
+        hamburger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            pages.classList.toggle('active');
+        });
+        
+        // Add smooth scroll to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
 </script>
 
 
