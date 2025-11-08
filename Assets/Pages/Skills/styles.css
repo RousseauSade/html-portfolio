@@ -1,0 +1,267 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+/* Navegador */
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000; /* Alto para estar siempre encima */
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.Icono {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Icono > img {
+  max-width: 20%;
+  max-height: 20%;
+}
+
+#Nombre {
+  color: white;
+  margin: 0;
+  font-size: clamp(0.8rem, 1rem, 1.5rem);
+  font-weight: 500;
+}
+
+.pages {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.paginas {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: clamp(0.8rem, 1rem, 1.5rem);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  padding: 5px 5px;
+  border-radius: 4px;
+}
+
+.paginas:hover {
+  color: yellow;
+  text-shadow: 0 0 8px yellow;
+  background-color: rgba(255, 255, 0, 0.1);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 21px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Fondo y video */
+.Skills {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000; /* Fondo de respaldo negro para el espacio */
+}
+
+/* Contenedor del video de fondo (queda debajo del 3D) */
+.skills-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; 
+  overflow: hidden;
+}
+
+.skills-video-bg video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Capa overlay para mejor legibilidad */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4); /* Oscurece el video/fondo */
+}
+
+/* Contenedor principal del texto */
+.Container {
+  position: relative;
+  z-index: 5; /* ¡MUY IMPORTANTE! Asegura que el texto esté encima del 3D */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 15px;
+}
+
+/* Título */
+#Titulo {
+  text-align: center;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  color: white;
+  margin: 0 auto;
+  padding: 10px 0 8px 0;
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 2px solid;
+  border-image: linear-gradient(90deg, #3498db, #9b59b6) 1;
+  width: max-content;
+  text-shadow: 0 0 16px #3498db, 0 0 6px #9b59b6;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icons a {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.social-icons img:hover {
+  filter: brightness(1.2);
+}
+
+.copyright {
+  color: white;
+  margin: 0;
+  font-size: clamp(0.7rem, 0.9rem, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .pages {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    backdrop-filter: blur(10px);
+  }
+  
+  .pages.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 20px 0;
+  }
+  
+  .paginas {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}

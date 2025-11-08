@@ -557,13 +557,14 @@ footer {
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.querySelector('.hamburger');
-      const pages = document.querySelector('.pages');
-      
-      hamburger.addEventListener('click', function() {
-          this.classList.toggle('active');
-          pages.classList.toggle('active');
-      });
+    const hamburger = document.querySelector('.hamburger');
+    const pages = document.querySelector('.pages');
+    
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('active');
+      pages.classList.toggle('active');
+    });
+  });
       
       // Fallback for video if it fails to load
       const videoBg = document.querySelector('.skills-video-bg video');
@@ -578,7 +579,6 @@ footer {
           document.querySelector('.skills-video-bg').appendChild(fallbackImg);
         });
       }
-    });
   </script>
 
   <footer>
@@ -589,7 +589,7 @@ footer {
         <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
         <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X (Twitter)" /></a>
         <a href="https://patreon.com/Rousseauo"><img src="./Assets/Images/patreon.png" alt="Patreon" /></a>
-        <a href="https://subscribestar.adult/rousseausade"><img src="./Assets/Images/subscribestar.svg" alt="SubscribeStar" style="filter: invert(1);" /></a>
+        <a href="https://www.bible.com/es/bible/149/JHN.1.RVR1960"><img src="./Assets/Images/subscribestar.svg" alt="SubscribeStar" style="filter: invert(1);" /></a>
         <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
       </div>
       <p class="copyright">Rousseau Sade / Copyright © 2025 All rights reserved.</p>
