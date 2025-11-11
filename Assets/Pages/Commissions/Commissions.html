@@ -406,9 +406,79 @@
       .hamburger.active span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
       }
+      /* ===== Commissions page unique theme (scoped) ===== */
+      .commissions-page {
+        --bg-1: linear-gradient(180deg, #fffef6 0%, #f6fff9 100%);
+        --card-bg: rgba(255,255,255,0.95);
+        --accent: #6b8e23; /* olive-ish */
+        --muted: #6b6b6b;
+        font-family: 'Sono', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      }
+
+      .commissions-page .wrapper {
+        background: var(--bg-1);
+        padding: 28px 20px 60px;
+        gap: 24px;
+      }
+
+      .commissions-page .intro-section {
+        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,255,245,0.9));
+        border-radius: 18px;
+        padding: 28px;
+      }
+
+      .commissions-page .intro-section h1 {
+        font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+        letter-spacing: 0.6px;
+        color: #1f3520;
+      }
+
+      .commissions-page .intro-section p {
+        color: var(--muted);
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+
+      .commissions-page .hourly-rate {
+        background: linear-gradient(90deg, var(--accent), #4caf50);
+        box-shadow: 0 6px 20px rgba(79, 121, 45, 0.18);
+      }
+
+      .commissions-page .pricing-plan {
+        background: linear-gradient(180deg, var(--card-bg), rgba(250,255,250,0.96));
+        border: 1px solid rgba(107,142,35,0.08);
+        box-shadow: 0 8px 22px rgba(33,33,33,0.06);
+        padding: 22px;
+      }
+
+      .commissions-page .plan-price {
+        color: var(--accent);
+        font-size: clamp(1.4rem, 3.5vw, 2rem);
+      }
+
+      .commissions-page .plan-button {
+        width: 100%;
+        padding: 14px 18px;
+        border-radius: 12px;
+        font-size: 1rem;
+        background: linear-gradient(90deg, #5aa84a, #4caf50);
+        box-shadow: 0 6px 18px rgba(76,175,80,0.14);
+      }
+
+      @media (max-width: 768px) {
+        .commissions-page .pricing-plan {
+          max-width: 100%;
+          padding: 16px;
+        }
+
+        .commissions-page .plan-features li {
+          text-align: left;
+          padding-left: 12px;
+        }
+      }
     </style>
   </head>
-  <body>
+  <body class="commissions-page">
     <div class="navigator">
       <div class="Icono">
         <img src="./Assets/Images/icon.svg" alt="Icono de pagina">
@@ -442,8 +512,8 @@
       </section>
       
       <div class="services-container">
-        <!-- Digital Art Commissions -->
-        <section class="service-category">
+  <!-- Digital Art Commissions -->
+  <section class="service-category service-digital-art">
           <h2>Digital Art Commissions</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
@@ -512,8 +582,8 @@
           </div>
         </section>
         
-        <!-- Pixel Art Commissions -->
-        <section class="service-category">
+  <!-- Pixel Art Commissions -->
+  <section class="service-category service-pixel-art">
           <h2>Pixel Art Commissions</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
@@ -566,8 +636,8 @@
           </div>
         </section>
         
-        <!-- Programming & Automation -->
-        <section class="service-category">
+  <!-- Programming & Automation -->
+  <section class="service-category service-programming">
           <h2>Programming & Automation Services</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
@@ -615,7 +685,7 @@
         </section>
 
                     <!-- Video Editing  -->
-        <section class="service-category">
+        <section class="service-category service-video">
           <h2>Video Editing</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
