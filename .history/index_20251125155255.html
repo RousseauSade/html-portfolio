@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./Assets/Images/icon.svg">
+</head>
+<body>
+  <div class="navigator">
+    <div  class="Icono">
+    <img src="./Assets/Images/icon.svg" alt="Icono de pagina">
+    <p id="Nombre">Rousseau_Kairos</p>
+    </div>
+    
+    <!-- Icono hamburguesa -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <!-- Menú de navegación -->
+    <div class="pages" id="pages">
+      <a href="index.html" class="paginas">Home</a>
+      <a href="./Assets/Pages/Education/education.html" class="paginas">Education</a>
+      <a href="./Assets/Pages/Experience/experience.html" class="paginas">Experience</a>
+      <a href="./Assets/Pages/Hobbies/hobbies.html" class="paginas">Hobbies</a>
+      <a href="./Assets/Pages/Skills/skills.html" class="paginas">Skills</a>
+      <a href="./Assets/Pages/Commissions/Commissions.html" class="paginas">Commissions</a>
+      <a href="./Assets/Pages/Blogs/blog.html" class="paginas">Blog</a>
+      <a href="./Assets/Pages/About/about.html" class="paginas">About me</a>
+      <a href="./Assets/Pages/Contact/contact.html" class="paginas">Contact me</a>
+    </div>
+  </div>
+
+
+  <div class="skills-video-bg">
+    <video autoplay muted loop playsinline>
+      <source src="./Assets/Images/fondo.webm" type="video/webm">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div id="Titulo">
+    <h1 id="Summary">Introduction</h1>
+  </div>
+  
+  <div id="Introductory-Text">
+    <div id="Image-Text">
+      <img id="Image-Profile" src="./Assets/Images/Photo_Profile.png" alt="My photo">
+      <div id="Text">
+        <p id="text-intro">Web Developer with a passion for creating dynamic and responsive web applications. 
+          Experienced in HTML, CSS, JavaScript, and various programing lenguages/programs. Committed to delivering high-quality 
+          code and user-friendly interfaces.</p>
+      </div>
+    </div>
+  </div>
+  
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const pages = document.querySelector('.pages');
+    
+    hamburger.addEventListener('click', function() {
+      this.classList.toggle('active');
+      pages.classList.toggle('active');
+    });
+  });
+ </script>
+</body>
+<footer>
+<div class="footer-container">
+  <div class="social-icons">
+    <a href="https://www.tiktok.com/@rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
+    <a href="https://www.twitch.tv/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Twitch" /></a>
+    <a href="https://www.instagram.com/rousseusade/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+    <a href="https://x.com/RoussSade"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X (Twitter)" /></a>
+    <a href="https://www.patreon.com/c/RousseauSade"><img src="./Assets/Images/patreon.png"  alt="Patreon" /></a>
+    <a href="https://www.bible.com/es/bible/149/JHN.1.RVR1960"><img src="./Assets/Images/subscribestar.svg" alt="SubscribeStar" style="filter: invert(4);" /></a>
+    <a href="https://t.me/rousseausade"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
+  </div>
+  <p class="copyright">Rousseau Sade / Copyright © 2025 All rights reserved.</p>
+  </div>
+</footer>
+</html>
