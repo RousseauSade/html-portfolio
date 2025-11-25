@@ -1,11 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About me</title>
+  <link rel="icon" href="./Assets/Images/icon.svg">
 
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>My Hobbies</title>
-   <link rel="icon" href="./Assets/Images/icon.svg">
 <style>
 
 html, body {
@@ -14,6 +14,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: beige;
 }
 
 * {
@@ -89,51 +90,26 @@ html, body {
   transition: all 0.3s ease;
 }
 
-/* Video Background Styles */
-.skills-video-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 
-.skills-video-bg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Hobbies Section */
-.Hobbies {
+/* About Section */
+.About {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  color: white;
-  position: relative;
-  z-index: 1;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  color: #333;
+  line-height: 1.6;
 }
 
-.Hobbies h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+.About h1 {
+  font-size: 2.5rem;
+  color: #222;
   text-align: center;
-  margin: 2rem 0 3rem;
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  margin-bottom: 2rem;
   position: relative;
   padding-bottom: 1rem;
 }
 
-.Hobbies h1::after {
+.About h1::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -141,70 +117,64 @@ html, body {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: yellow;
+  background-color: yellow;
   border-radius: 3px;
 }
 
-.Hobbies h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-top: 3rem;
-  color: yellow;
-  text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 0, 0.3);
-}
-
-.Hobbies p {
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
-  line-height: 1.6;
-  margin: 1.5rem 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 3px solid yellow;
-  backdrop-filter: blur(2px);
-}
-
-.Hobbies img {
+.About img {
   display: block;
-  max-width: 100%;
-  height: auto;
   margin: 2rem auto;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.Hobbies img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Hobby Items Layout */
-.hobby-item {
-  margin-bottom: 4rem;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hobby-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+.About img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Animation Effects */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.About p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-align: justify;
 }
 
-.Hobbies h1 { animation: fadeIn 0.8s ease forwards; }
-.Hobbies h2 { animation: fadeIn 0.6s ease forwards 0.2s; }
-.Hobbies p { animation: fadeIn 0.6s ease forwards 0.4s; }
-.Hobbies img { animation: fadeIn 0.6s ease forwards 0.6s; }
+.About strong p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #444;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 0, 0.1);
+  border-left: 3px solid yellow;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .About {
+    padding: 0 1.5rem;
+  }
+  
+  .About h1 {
+    font-size: 2rem;
+  }
+  
+  .About p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .About {
+    padding: 0 1rem;
+  }
+  
+  .About img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 /* Footer */
 footer {
@@ -342,9 +312,10 @@ footer {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-    </style>
- </head>
- <body>
+</style>
+
+</head>
+<body>
   <div class="navigator">
     <div  class="Icono">
     <img src="./Assets/Images/icon.svg" alt="Icono de pagina">
@@ -372,52 +343,29 @@ footer {
     </div>
   </div>
 
+  <div class="About">
+  <h1>About me</h1>
+  <img src="./Assets/Images/Cooking.gif" alt="Cat programming" height="300" width="300">
+    <p>Hi, I'm Rousseau Sade — a passionate self-taught learner who thrives at the intersection of technology, creativity, and critical thinking.<br>
+      I love programming, reading obsessively, writing, drawing, learning languages, and immersing myself in imaginary worlds through games and stories.</p>
+    
+    <p>I'm currently training as a Full Stack Developer, combining hands-on personal projects with structured learning through platforms like Udemy. <br>
+      I have experience building automation tools with Python, especially for administrative and data-related tasks, and I’m comfortable working with web technologies like HTML, CSS, and JavaScript. <br>
+      I'm driven by the idea of using software not just to build, but to solve real problems and make life easier for others.</p>
 
-  <div class="skills-video-bg">
-    <video autoplay muted loop playsinline>
-      <source src="./Assets/Images/fondo.webm" type="video/webm">
-    </video>
-    <div class="video-overlay"></div>
-  </div>
+    <p>I'm passionate about languages and have foundations in German, French, Portuguese, Italian, and Catalan. <br>
+      I'm fueled by curiosity and a constant desire to understand how things work — whether it's a system, a language, or a society.</p>
 
-<!-- Example image URL -->
+    <p>I'm not chasing perfection — I'm committed to progress. I make mistakes, I learn, and I move forward, because I know every step, <br>
+      even the uncertain ones, brings me closer to who I want to become.</p>
 
-<div class="Hobbies">
- <h1>My Hobbies</h1>
-
-   <h2>1. Reading</h2>
-      <p>I like to read a lot, but like crazy, i read the entire first part of Stormlight Archive which is like 6000 pages, the best thing that happen to me is reading</p>
-      <img src="./Assets/Images/Reader.gif" alt="A cat reading a book" height="300" width="500" />
-
-   <h2>2. Programming</h2>
-      <p>I like to program, i like to make things that help me in my daily life, like a file browser, 
-         or a code to consolidate multiple documents of excel in one, or a unifier of pdf, or a code to make a simple game, 
-         i like to make things that make my life easier</p>
-      <img src="./Assets/Images/Programming.gif" alt="A dude Programming" height="300" width="500" />
-
-   <h2>3. Playing Video Games</h2>
-      <p>I like to play video games, i like to play RPG games, i like to play strategy games, i like to play simulation games, 
-         i like Skyrim, Stardew Valley, The Saga of Zelda, The Saga of Mario, and shotters as Counter Strike, or simulator as Farming simulator</p>
-      <img src="./Assets/Images/Gamer.gif" alt="Meme of a gamer" height="300" width="500" />
-
-   <h2>4. Watching Movies</h2>
-      <p>I like to watch movies, i like Citizen Kane, Casa Blanca, The Saga of Batman, THe saga of Star wars, 
-         The saga of Lord of the Rings, The saga of Harry Potter, The saga of Marvel, i like to watch movies that make me think, 
-         or that make me feel something, or that make me laugh</p>
-      <img src="./Assets/Images/Movie.gif" alt="Bob Sponge Eating popcorn" height="300" width="500" />
-
-   <h2>5. Writing</h2>
-      <p>I like to write but i don't do it to often</p>
-      <img src="./Assets/Images/Writer.gif" alt="Kermit writing" height="300" width="500" />
-
-   <h2>6. Drawing</h2>
-      <p>I like to Draw but i don't do it to often</p>
-      <img src="./Assets/Images/Drawing.gif" alt="A dude drawing" height="300" width="500" />
-
+  <strong><p>Thanks for reading</p></strong>
+  <img src="./Assets/Images/Trump.gif" alt="Trump Approval">
 </div>
 
-     <script>
-            document.addEventListener('DOMContentLoaded', function() {
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
         const hamburger = document.querySelector('.hamburger');
         const pages = document.querySelector('.pages');
         
@@ -439,8 +387,8 @@ footer {
           <a href="https://www.bible.com/es/bible/149/ROM.1.RVR1960"><img src="./Assets/Images/subscribestar.svg" alt="SubscribeStar" style="filter: invert(4);" /></a>
           <a href="https://t.me/rousseaukairos"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
         </div>
-          <p class="copyright">☦️Rousseau Kairós☦️ / Copyright © 2025 All rights reserved.</p>
+  <p class="copyright">☦️Rousseau Kairós☦️ / Copyright © 2025 All rights reserved.</p>
         </div>
     </footer>
- </body>
+</body>
 </html>
