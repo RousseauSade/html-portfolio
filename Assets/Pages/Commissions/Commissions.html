@@ -88,10 +88,29 @@
       .service-category {
         background-color: white;
         border-radius: 15px;
-        padding: 25px;
+        padding: 30px 25px;
         width: 100%;
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        position: relative; /* Necesario para el video de fondo */
+        overflow: hidden; /* Para contener el video dentro de los bordes redondeados */
       }
+
+      .service-video-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0; /* Detrás del contenido de la sección */
+      }
+
+      .service-video-bg video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .service-category > h2, .service-category > .pricing-container { position: relative; z-index: 1; }
 
       .service-category h2 {
         display: flex;
@@ -408,61 +427,65 @@
       }
       /* ===== Commissions page unique theme (scoped) ===== */
       .commissions-page {
-        --bg-1: linear-gradient(180deg, #fffef6 0%, #f6fff9 100%);
-        --card-bg: rgba(255,255,255,0.95);
-        --accent: #6b8e23; /* olive-ish */
-        --muted: #6b6b6b;
+        --bg-1: linear-gradient(180deg, #f8f9fa 0%, #e9f5ee 100%);
+        --card-bg: rgba(255, 255, 255, 0.85);
+        --accent: #2e7d32; /* Un verde más profundo y profesional */
+        --muted: #555;
+        --border-color: rgba(46, 125, 50, 0.15);
         font-family: 'Sono', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       }
 
       .commissions-page .wrapper {
         background: var(--bg-1);
-        padding: 28px 20px 60px;
-        gap: 24px;
+        padding: 30px 20px 60px;
+        gap: 30px;
       }
 
       .commissions-page .intro-section {
-        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(240,255,245,0.9));
+        background: transparent;
         border-radius: 18px;
-        padding: 28px;
+        padding: 30px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
       }
 
       .commissions-page .intro-section h1 {
-        font-size: clamp(1.6rem, 3.2vw, 2.6rem);
-        letter-spacing: 0.6px;
-        color: #1f3520;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        letter-spacing: 0.5px;
+        color: #212121;
       }
 
       .commissions-page .intro-section p {
         color: var(--muted);
-        font-size: 1rem;
-        margin-top: 10px;
+        font-size: 1.05rem;
+        margin-top: 15px;
       }
 
       .commissions-page .hourly-rate {
-        background: linear-gradient(90deg, var(--accent), #4caf50);
-        box-shadow: 0 6px 20px rgba(79, 121, 45, 0.18);
+        background: var(--accent);
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+        font-size: 1.2rem;
       }
 
       .commissions-page .pricing-plan {
-        background: linear-gradient(180deg, var(--card-bg), rgba(250,255,250,0.96));
-        border: 1px solid rgba(107,142,35,0.08);
-        box-shadow: 0 8px 22px rgba(33,33,33,0.06);
-        padding: 22px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 25px rgba(33, 33, 33, 0.07);
+        padding: 25px;
       }
 
       .commissions-page .plan-price {
         color: var(--accent);
-        font-size: clamp(1.4rem, 3.5vw, 2rem);
+        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
       }
 
       .commissions-page .plan-button {
         width: 100%;
-        padding: 14px 18px;
+        padding: 15px 20px;
         border-radius: 12px;
         font-size: 1rem;
-        background: linear-gradient(90deg, #5aa84a, #4caf50);
-        box-shadow: 0 6px 18px rgba(76,175,80,0.14);
+        background: var(--accent);
+        box-shadow: 0 6px 18px rgba(46, 125, 50, 0.2);
       }
 
       @media (max-width: 768px) {
@@ -476,6 +499,78 @@
           padding-left: 12px;
         }
       }
+
+      /* ===== Service-specific themes ===== */
+
+      /* Digital Art Theme (Creative & Blue) */
+      .service-digital-art {
+        background: linear-gradient(135deg, #f4f7ff 0%, #e6f0ff 100%);
+        border: 1px solid #d6e4ff;
+      }
+      .service-digital-art h2 {
+        color: #3a5a99;
+        border-bottom-color: #6c8ee8;
+      }
+      .service-digital-art .pricing-plan {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-color: #e0e9ff;
+      }
+      .service-digital-art .plan-price {
+        color: #4a6ac2;
+      }
+      .service-digital-art .plan-button {
+        background: linear-gradient(90deg, #5a7edc, #4a6ac2);
+        box-shadow: 0 4px 15px rgba(74, 106, 194, 0.25);
+      }
+
+      /* Pixel Art Theme (Retro & Sharp) */
+      .service-pixel-art {
+        background: #2d2d3a;
+        border-radius: 10px; /* Bordes más definidos */
+      }
+      .service-pixel-art h2 {
+        color: #ff47a4; /* Rosa neón */
+        border-bottom-color: #ff47a4;
+        font-family: 'Courier New', Courier, monospace; /* Fuente de estilo retro */
+        letter-spacing: 2px;
+      }
+      .service-pixel-art .pricing-plan {
+        background-color: #3c3c4c;
+        border-color: #5a5a6a;
+        border-radius: 8px;
+      }
+      .service-pixel-art .plan-title, .service-pixel-art .plan-features li, .service-pixel-art .art-size {
+        color: #f0f0f0;
+      }
+      .service-pixel-art .plan-price {
+        color: #00f5d4; /* Cian neón */
+      }
+      .service-pixel-art .plan-button {
+        background: #ff47a4;
+        box-shadow: 0 0 15px rgba(255, 71, 164, 0.4);
+        border-radius: 5px;
+      }
+
+      /* Programming Theme (Tech & Dark) */
+      .service-programming {
+        background: #1a202c;
+        border: 1px solid #2d3748;
+      }
+      .service-programming h2, .service-programming .plan-title, .service-programming .plan-features li {
+        color: #e2e8f0;
+      }
+      .service-programming h2 { border-bottom-color: #4fd1c5; }
+      .service-programming .pricing-plan { background-color: #2d3748; border-color: #4a5568; }
+      .service-programming .plan-price { color: #4fd1c5; } /* Teal */
+      .service-programming .plan-button { background: #319795; box-shadow: 0 4px 15px rgba(79, 209, 197, 0.2); }
+
+      /* Video Editing Theme (Cinematic & Red) */
+      .service-video { background: #1f1f1f; border: 1px solid #333; }
+      .service-video h2, .service-video .plan-title, .service-video .plan-features li, .service-video .art-size { color: #f5f5f5; }
+      .service-video h2 { border-bottom-color: #e50914; }
+      .service-video .pricing-plan { background-color: #292929; border-color: #404040; }
+      .service-video .plan-price { color: #e50914; } /* Rojo Netflix */
+      .service-video .plan-button { background: #b20710; box-shadow: 0 4px 15px rgba(229, 9, 20, 0.25); }
     </style>
   </head>
   <body class="commissions-page">
@@ -514,6 +609,13 @@
       <div class="services-container">
   <!-- Digital Art Commissions -->
   <section class="service-category service-digital-art">
+          <div class="service-video-bg">
+            <video autoplay muted loop playsinline>
+              <!-- REEMPLAZA esta ruta con tu video para Arte Digital -->
+              <source src="./Assets/Videos/digital_art_bg.webm" type="video/webm">
+            </video>
+            <div class="video-overlay"></div>
+          </div>
           <h2>Digital Art Commissions</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
@@ -584,6 +686,13 @@
         
   <!-- Pixel Art Commissions -->
   <section class="service-category service-pixel-art">
+          <div class="service-video-bg">
+            <video autoplay muted loop playsinline>
+              <!-- REEMPLAZA esta ruta con tu video para Pixel Art -->
+              <source src="./Assets/Videos/pixel_art_bg.webm" type="video/webm">
+            </video>
+            <div class="video-overlay"></div>
+          </div>
           <h2>Pixel Art Commissions</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
@@ -638,6 +747,13 @@
         
   <!-- Programming & Automation -->
   <section class="service-category service-programming">
+          <div class="service-video-bg">
+            <video autoplay muted loop playsinline>
+              <!-- REEMPLAZA esta ruta con tu video para Programación -->
+              <source src="./Assets/Videos/programming_bg.webm" type="video/webm">
+            </video>
+            <div class="video-overlay"></div>
+          </div>
           <h2>Programming & Automation Services</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
@@ -686,6 +802,13 @@
 
                     <!-- Video Editing  -->
         <section class="service-category service-video">
+          <div class="service-video-bg">
+            <video autoplay muted loop playsinline>
+              <!-- REEMPLAZA esta ruta con tu video para Edición de Video -->
+              <source src="./Assets/Videos/video_editing_bg.webm" type="video/webm">
+            </video>
+            <div class="video-overlay"></div>
+          </div>
           <h2>Video Editing</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
