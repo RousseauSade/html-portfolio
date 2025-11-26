@@ -55,7 +55,32 @@
       </div>
     </div>
   </div>
-  
+
+  <!-- Sección del Stream de Twitch -->
+  <div id="stream-container">
+    <h2 id="stream-title">Stream en Vivo</h2>
+    <div class="stream-wrapper">
+      <!-- El reproductor de Twitch se incrustará aquí -->
+      <div id="twitch-embed"></div>
+    </div>
+  </div>
+
+  <!-- Script para el reproductor de Twitch -->
+  <script src="https://embed.twitch.tv/embed/v1.js"></script>
+  <script type="text/javascript">
+    // Asegúrate de que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function() {
+      // Crea el embed de Twitch
+      new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: "100%",
+        channel: "rousseaukairos", // Tu nombre de usuario de Twitch
+        layout: "video-with-chat",
+        // IMPORTANTE: Reemplaza "localhost" con el dominio de tu sitio web cuando lo publiques.
+        parent: ["localhost"] 
+      });
+    });
+  </script>
  <script>
     document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
