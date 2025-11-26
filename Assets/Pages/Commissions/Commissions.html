@@ -110,6 +110,15 @@
         object-fit: cover;
       }
 
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2); /* Ajusta la opacidad según necesites */
+      }
+
       .service-category > h2, .service-category > .pricing-container { position: relative; z-index: 1; }
 
       .service-category h2 {
@@ -123,19 +132,19 @@
       }
 
       .pricing-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 25px;
         width: 100%;
-        justify-items: center;
       }
 
       .pricing-plan {
         background-color: #f8f9fa;
         border-radius: 15px;
         padding: 25px;
-        width: 100%;
-        max-width: 350px;
+        flex: 1 1 300px;
+        max-width: 340px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -149,7 +158,7 @@
       }
 
       .plan-title {
-        font-size: 1.5rem;
+        font-size: clamp(1.3rem, 2vw, 1.5rem);
         font-weight: bold;
         color: #2c3e50;
         margin-bottom: 15px;
@@ -157,7 +166,7 @@
       }
 
       .plan-price {
-        font-size: 2rem;
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
         font-weight: bold;
         color: #4CAF50;
         margin-bottom: 20px;
@@ -292,29 +301,15 @@
           padding: 15px;
         }
         
-        .service-category h2 {
-          font-size: 1.5rem;
-        }
-        
         .pricing-container {
-          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .pricing-plan {
+          flex-basis: 95%;
           max-width: 400px;
         }
-        
-        .plan-title {
-          font-size: 1.3rem;
-        }
-        
-        .plan-price {
-          font-size: 1.8rem;
-        }
-      }
-      
-      /* tamaño tablet */
-      @media (min-width: 769px) and (max-width: 1024px) {
-        .pricing-container {
-          grid-template-columns: repeat(2, 1fr);
-        }
+
       }
 
       /* Hamburger menu styles */
@@ -475,8 +470,7 @@
       }
 
       .commissions-page .plan-price {
-        color: var(--accent);
-        font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+        color: var(--accent); 
       }
 
       .commissions-page .plan-button {
@@ -531,8 +525,12 @@
       .service-pixel-art h2 {
         color: #ff47a4; /* Rosa neón */
         border-bottom-color: #ff47a4;
+        text-shadow: 0 0 8px rgba(255, 71, 164, 0.5);
         font-family: 'Courier New', Courier, monospace; /* Fuente de estilo retro */
         letter-spacing: 2px;
+      }
+      .service-pixel-art .video-overlay {
+        background: radial-gradient(circle, rgba(255, 71, 164, 0.1) 0%, rgba(45, 45, 58, 0.7) 100%);
       }
       .service-pixel-art .pricing-plan {
         background-color: #3c3c4c;
@@ -549,6 +547,7 @@
         background: #ff47a4;
         box-shadow: 0 0 15px rgba(255, 71, 164, 0.4);
         border-radius: 5px;
+        color: #1a1a2e;
       }
 
       /* Programming Theme (Tech & Dark) */
@@ -556,18 +555,29 @@
         background: #1a202c;
         border: 1px solid #2d3748;
       }
+      .service-programming .video-overlay {
+        background: rgba(26, 32, 44, 0.5);
+      }
       .service-programming h2, .service-programming .plan-title, .service-programming .plan-features li {
         color: #e2e8f0;
       }
-      .service-programming h2 { border-bottom-color: #4fd1c5; }
+      .service-programming h2 { border-bottom-color: #4fd1c5; text-shadow: 0 0 8px rgba(79, 209, 197, 0.3); }
       .service-programming .pricing-plan { background-color: #2d3748; border-color: #4a5568; }
       .service-programming .plan-price { color: #4fd1c5; } /* Teal */
       .service-programming .plan-button { background: #319795; box-shadow: 0 4px 15px rgba(79, 209, 197, 0.2); }
 
       /* Video Editing Theme (Cinematic & Red) */
       .service-video { background: #1f1f1f; border: 1px solid #333; }
+      .service-video .video-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 100%);
+      }
       .service-video h2, .service-video .plan-title, .service-video .plan-features li, .service-video .art-size { color: #f5f5f5; }
-      .service-video h2 { border-bottom-color: #e50914; }
+      .service-video h2 {
+        border-bottom-color: #e50914;
+        text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+        font-family: 'Helvetica Neue', sans-serif;
+        text-transform: uppercase;
+      }
       .service-video .pricing-plan { background-color: #292929; border-color: #404040; }
       .service-video .plan-price { color: #e50914; } /* Rojo Netflix */
       .service-video .plan-button { background: #b20710; box-shadow: 0 4px 15px rgba(229, 9, 20, 0.25); }
@@ -603,7 +613,7 @@
       <section class="intro-section">
         <h1>My Services & Commissions</h1>
         <p>I offer a variety of professional services including programming, digital art commissions, and administrative automation solutions. Below you'll find detailed pricing for each service category.</p>
-        <div class="hourly-rate">Hourly Rate as Programmer: $15/hour</div>
+        <div class="hourly-rate">Hourly Rate as Programmer: $20/hour</div>
       </section>
       
       <div class="services-container">
@@ -620,64 +630,121 @@
           <div class="pricing-container">
             <div class="pricing-plan">
               <div class="plan-title">Icon</div>
-              <div class="plan-price">$12</div>
+              <div class="plan-price">$20</div>
               <div class="art-size">(128x128px - 256x256px)</div>
               <ul class="plan-features">
-                <li>✅ Simple character/icons</li>
-                <li>✅ 1 Character</li>
+                <li>✅ 1 Personaje/Objeto</li>
                 <li>✅ Basic background</li>
                 <li>✅ 2 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Commercial use (+$10)</li>
-              </ul>
-              <button class="plan-button">Order Now</button>
-            </div>
-            
-            <div class="pricing-plan">
-              <div class="plan-title">Portrait</div>
-              <div class="plan-price">$30</div>
-              <div class="art-size">(800x800px - 1920x1080px)</div>
-              <ul class="plan-features">
-                <li>✅ 2 Ilustrations</li>
-                <li>✅ Detailed character</li>
-                <li>✅ 3 Character</li>
-                <li>➕ 1 more Character $3</li>
-                <li>✅ Custom background</li>
-                <li>✅ 3 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
+                <li>✅ Updates every 3 days</li>
                 <li>🚫 Commercial use (+$20)</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
             
             <div class="pricing-plan">
-              <div class="plan-title">Full Scene</div>
-              <div class="plan-price">$60</div>
-              <div class="art-size">(800x800px - 2000x2000px)</div>
+              <div class="plan-title">Sketch / Lineart</div>
+              <div class="plan-price">$35</div>
+              <div class="art-size">(Up to 1920x1080px)</div>
               <ul class="plan-features">
-                <li>✅ 6 Ilustrations</li>
-                <li>✅ Multiple characters</li>
-                <li>✅ Complex background</li>
-                <li>✅ Detailed lighting</li>
+                <li>✅ 1 Character (Bust up)</li>
+                <li>✅ Clean Lineart (No Color)</li>
+                <li>✅ Simple Background</li>
+                <li>✅ 2 Revisions</li>
+                <li>🚫 Commercial use (+$25)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Portrait</div>
+              <div class="plan-price">$50</div>
+              <div class="art-size">(800x800px - 1920x1080px)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Character (Bust up)</li>
+                <li>✅ Detailed character</li>
+                <li>✅ Custom background</li>
+                <li>✅ 3 Revisions</li>
+                <li>✅ Updates every 2 days</li>
+                <li>🚫 Commercial use (+$40)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Half Body</div>
+              <div class="plan-price">$75</div>
+              <div class="art-size">(1920x1080px - 2560x1440px)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Character (Half Body)</li>
+                <li>➕ Additional Char. (+$40)</li>
+                <li>✅ Detailed Background</li>
+                <li>✅ Source File (.psd, .clip)</li>
                 <li>✅ 5 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Commercial use (+$30)</li>
+                <li>✅ Weekly updates</li>
+                <li>🚫 Commercial use (+$60)</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
 
             <div class="pricing-plan">
-              <div class="plan-title">Custom</div>
+              <div class="plan-title">Full Body / Scene</div>
               <div class="plan-price">$120+</div>
-              <div class="art-size">(800x800px - 4000x4000px)</div>
+              <div class="art-size">(Up to 4K)</div>
               <ul class="plan-features">
-                <li>✅ 9 Ilustrations</li>
-                <li>✅ Multiple characters</li>
-                <li>✅ Complex background</li>
-                <li>✅ Detailed lighting</li>
-                <li>✅ 15 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Commercial use (+$30)</li>
+                <li>✅ 1 Full Body Character</li>
+                <li>➕ Additional Char. (+$65)</li>
+                <li>✅ Complex Scene/Background</li>
+                <li>✅ Advanced Lighting & FX</li>
+                <li>✅ Source File (.psd, .clip)</li>
+                <li>✅ Unlimited Revisions</li>
+                <li>✅ Constant Updates</li>
+                <li>🚫 Commercial use (+$80)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+
+            <div class="pricing-plan">
+              <div class="plan-title">Character Reference Sheet</div>
+              <div class="plan-price">$200+</div>
+              <div class="art-size">(High Resolution)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Full Body (Front)</li>
+                <li>✅ 2 Additional Views (e.g. Back, Side)</li>
+                <li>✅ 3 Expressions or Item close-ups</li>
+                <li>✅ Color Palette & Details</li>
+                <li>✅ 5 Revisions</li>
+                <li>✅ Commercial use (+$120)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+
+            <div class="pricing-plan">
+              <div class="plan-title">Banners y Paneles</div>
+              <div class="plan-price">$60+</div>
+              <div class="art-size">(Twitch/YouTube/Socials)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Banner Principal</li>
+                <li>✅ Set de 5 Paneles (Twitch)</li>
+                <li>✅ Diseño cohesivo con tu marca</li>
+                <li>✅ Archivos optimizados para web</li>
+                <li>✅ 3 Revisions</li>
+                <li>🚫 Logo Design (Add-on)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+
+            <div class="pricing-plan">
+              <div class="plan-title">Diseño de Tatuaje</div>
+              <div class="plan-price">$80+</div>
+              <div class="art-size">(Custom Size)</div>
+              <ul class="plan-features">
+                <li>✅ Diseño 100% Original</li>
+                <li>✅ Estilo Lineart o Sombreado</li>
+                <li>✅ Stencil listo para tatuador</li>
+                <li>✅ 3 Revisiones de concepto</li>
+                <li>✅ Derechos de uso personal</li>
+                <li>🚫 No incluye la aplicación</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
@@ -697,48 +764,102 @@
           <div class="pricing-container">
             <div class="pricing-plan">
               <div class="plan-title">Sprite</div>
-              <div class="plan-price">$12</div>
+              <div class="plan-price">$15</div>
               <div class="art-size">(16x16 - 32x32px)</div>
               <ul class="plan-features">
                 <li>✅ 1 Character sprite</li>
-                <li>➕ 1 more Character $3</li>
-                <li>✅ Consistent style</li>
-                <li>✅ 1-2 poses</li>
-                <li>✅ Simple animation</li>
+                <li>✅ 1-3 poses (e.g. idle, walk)</li>
+                <li>✅ Simple animation (3-4 frames)</li>
                 <li>✅ 2 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Commercial use (+$15)</li>
+                <li>✅ Weekly updates</li>
+                <li>🚫 Commercial use (+$20)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Pixel Art Emotes</div>
+              <div class="plan-price">$20 / emote</div>
+              <div class="art-size">(112, 56, 28px)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Custom Emote</li>
+                <li>✅ Pack de 3 por $55</li>
+                <li>✅ Formato para Twitch/Discord</li>
+                <li>✅ 2 Revisions por emote</li>
+                <li>✅ Derechos de uso incluidos</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Sprite Animado (Avanzado)</div>
+              <div class="plan-price">$50+</div>
+              <div class="art-size">(32x32px - 64x64px)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Character Sprite</li>
+                <li>✅ Animación compleja (8-12 frames)</li>
+                <li>✅ Ej: Ataque, Magia, Salto</li>
+                <li>✅ 3 Revisions</li>
+                <li>✅ Commercial use (+$40)</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
             
             <div class="pricing-plan">
               <div class="plan-title">Tile Set</div>
-              <div class="plan-price">$50</div>
-              <div class="art-size">(Custom dimensions)</div>
+              <div class="plan-price">$85+</div>
+              <div class="art-size">(16x16 or 32x32 tiles)</div>
               <ul class="plan-features">
-                <li>✅ Complete tile set</li>
-                <li>✅ Consistent style</li>
-                <li>✅ 15 tiles</li>
-                <li>✅ 3 Revisions per tile</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Commercial use (+$30)</li>
+                <li>✅ Basic set (20 tiles)</li>
+                <li>✅ Autotiling compatible</li>
+                <li>✅ Thematic consistency</li>
+                <li>✅ 3 Revisions on the set</li>
+                <li>✅ Weekly updates</li>
+                <li>🚫 Commercial use (+$65)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Pixel Art Portrait</div>
+              <div class="plan-price">$40</div>
+              <div class="art-size">(e.g. 128x128px)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Character (Bust up)</li>
+                <li>✅ Detailed pixel shading</li>
+                <li>✅ Simple animated background</li>
+                <li>✅ 3 Revisions</li>
+                <li>✅ Personal use only</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
             
             <div class="pricing-plan">
               <div class="plan-title">Pixel Scene</div>
-              <div class="plan-price">$80+</div>
-              <div class="art-size">(Custom dimensions)</div>
+              <div class="plan-price">$150+</div>
+              <div class="art-size">(e.g. 320x180px)</div>
               <ul class="plan-features">
-                <li>✅ Detailed pixel scene</li>
-                <li>✅ Multiple elements</li>
-                <li>✅ Consistent style</li>
-                <li>✅ Animation available</li>
+                <li>✅ Detailed scene/environment</li>
+                <li>✅ Parallax background layers</li>
+                <li>✅ Looping animations (weather, etc.)</li>
                 <li>✅ 5 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Commercial use (+$50)</li>
+                <li>✅ Constant Updates</li>
+                <li>🚫 Commercial use (+$100)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+
+            <div class="pricing-plan">
+              <div class="plan-title">Game Assets Pack (Starter)</div>
+              <div class="plan-price">$220+</div>
+              <div class="art-size">(16x16 or 32x32)</div>
+              <ul class="plan-features">
+                <li>✅ 1 Char. (4-dir walk anim)</li>
+                <li>✅ 1 Enemy (idle anim)</li>
+                <li>✅ 15 Thematic Tiles</li>
+                <li>✅ 5 Item/Icons</li>
+                <li>✅ 3 Revisions on the pack</li>
+                <li>✅ Commercial use included</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
@@ -758,28 +879,41 @@
           <div class="pricing-container">
             <div class="pricing-plan">
               <div class="plan-title">Power BI Report</div>
-              <div class="plan-price">$150+</div>
+              <div class="plan-price">$250+</div>
               <ul class="plan-features">
-                <li>✅ Data visualization</li>
-                <li>✅ 3-5 dashboards</li>
-                <li>✅ Data connection setup</li>
+                <li>✅ 1 Interactive Dashboard</li>
+                <li>✅ Up to 3 Data Sources</li>
+                <li>✅ Data Modeling & DAX</li>
                 <li>✅ 2 Revisions</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Ongoing maintenance</li>
+                <li>✅ Weekly progress report</li>
+                <li>🚫 Data Cleaning (Add-on)</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
             
             <div class="pricing-plan">
               <div class="plan-title">Basic Website</div>
-              <div class="plan-price">$100</div>
+              <div class="plan-price">$400+</div>
               <ul class="plan-features">
-                <li>✅ 3-5 pages</li>
+                <li>✅ Up to 5 static pages</li>
                 <li>✅ Responsive design</li>
                 <li>✅ Basic SEO</li>
                 <li>✅ Contact form</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 E-commerce</li>
+                <li>✅ 1 month of support</li>
+                <li>🚫 Hosting/Domain setup</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Consultoría Técnica</div>
+              <div class="plan-price">$40/hr</div>
+              <ul class="plan-features">
+                <li>✅ Code Review & Debugging</li>
+                <li>✅ Arquitectura de Software</li>
+                <li>✅ Optimización de Bases de Datos</li>
+                <li>✅ Asesoría en Power BI / Excel</li>
+                <li>✅ Sesiones por videollamada</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
@@ -788,19 +922,61 @@
               <div class="plan-title">Process Automation</div>
               <div class="plan-price">$200+</div>
               <ul class="plan-features">
-                <li>✅ Automate repetitive tasks</li>
-                <li>✅ Excel/Python scripts</li>
-                <li>✅ Data processing</li>
-                <li>✅ Documentation</li>
-                <li>✅ 1 or 3 updates per week</li>
-                <li>🚫 Complex AI solutions</li>
+                <li>✅ Task analysis & mapping</li>
+                <li>✅ Python/VBA Scripting</li>
+                <li>✅ Data entry/processing automation</li>
+                <li>✅ Full Documentation</li>
+                <li>✅ 2 Revisions on logic</li>
+                <li>🚫 API Integration (Add-on)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Custom Script / Small Tool</div>
+              <div class="plan-price">$90+</div>
+              <ul class="plan-features">
+                <li>✅ Scripting (Python, JS)</li>
+                <li>✅ Web Scraping</li>
+                <li>✅ File Organization/Processing</li>
+                <li>✅ Small Desktop GUI Tool</li>
+                <li>✅ Code with comments</li>
+                <li>✅ 2 Revisions on functionality</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+
+            <div class="pricing-plan">
+              <div class="plan-title">Mantenimiento Web Mensual</div>
+              <div class="plan-price">$70/mes</div>
+              <ul class="plan-features">
+                <li>✅ Actualizaciones de seguridad</li>
+                <li>✅ Backups semanales</li>
+                <li>✅ Actualización de contenido (2hr)</li>
+                <li>✅ Monitoreo de rendimiento</li>
+                <li>✅ Soporte prioritario</li>
+                <li>✅ Para sitios existentes</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+
+            <div class="pricing-plan">
+              <div class="plan-title">API / Backend Básico</div>
+              <div class="plan-price">$450+</div>
+              <ul class="plan-features">
+                <li>✅ API RESTful (Node.js/Python)</li>
+                <li>✅ Integración con 1 API externa</li>
+                <li>✅ Base de datos (SQL/NoSQL)</li>
+                <li>✅ Autenticación de usuarios</li>
+                <li>✅ Documentación de endpoints</li>
+                <li>🚫 Frontend no incluido</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
           </div>
         </section>
 
-                    <!-- Video Editing  -->
+        <!-- Video Editing  -->
         <section class="service-category service-video">
           <div class="service-video-bg">
             <video autoplay muted loop playsinline>
@@ -812,43 +988,102 @@
           <h2>Video Editing</h2>
           <div class="pricing-container">
             <div class="pricing-plan">
-              <div class="plan-title">Short Video</div>
-              <div class="plan-price">$12</div>
-              <div class="art-size">(720p - 1080p)</div>
+              <div class="plan-title">Shorts / TikToks</div>
+              <div class="plan-price">$30</div>
+              <div class="art-size">(Up to 60 seconds)</div>
               <ul class="plan-features">
-                <li>✅ 3 videos</li>
-                <li>✅ Max Time 3 or 5 minutes per video</li>
-                <li>✅ Basic Animacions</li>
-                <li>✅ 2 Revisions per video</li>
-                <li>✅ 1 or 3 updates per week</li>
+                <li>✅ 1 Edited Video</li>
+                <li>✅ Subtitles & Captions</li>
+                <li>✅ Sound Effects & Music</li>
+                <li>✅ 2 Revisions</li>
+                <li>✅ Delivery in 2-3 days</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
             
             <div class="pricing-plan">
-              <div class="plan-title">Medium Pack Videos</div>
-              <div class="plan-price">$35</div>
-              <div class="art-size">(1080p - 1440p)</div>
+              <div class="plan-title">Paquete Redes Sociales</div>
+              <div class="plan-price">$125</div>
+              <div class="art-size">(Pack de 5 videos)</div>
               <ul class="plan-features">
-                <li>✅ 4 videos</li>
-                <li>✅ Max Time 10 or 15 minutes per video</li>
-                <li>✅ Medium Animacions</li>
-                <li>✅ 4 Revisions per video</li>
-                <li>✅ 1 or 3 updates per week</li>
+                <li>✅ 5 Videos (hasta 60s c/u)</li>
+                <li>✅ Subtítulos y música</li>
+                <li>✅ Formato vertical (9:16)</li>
+                <li>✅ 1 Revisión por video</li>
+                <li>✅ Entrega semanal</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
             
             <div class="pricing-plan">
-              <div class="plan-title">Large Pack Videos</div>
-              <div class="plan-price">$80</div>
-              <div class="art-size">(1080p - 1440p)</div>
+              <div class="plan-title">YouTube Video</div>
+              <div class="plan-price">$100+</div>
+              <div class="art-size">(5-10 minutes)</div>
               <ul class="plan-features">
-                <li>✅ 8 videos</li>
-                <li>✅ Max Time 15 or 30 minutes per video</li>
-                <li>✅ High Animacions</li>
-                <li>✅ 8 Revisions per video</li>
-                <li>✅ 1 or 3 updates per week</li>
+                <li>✅ Professional Editing</li>
+                <li>✅ Color Correction & Grading</li>
+                <li>✅ Motion Graphics</li>
+                <li>✅ 3 Revisions</li>
+                <li>✅ Delivery in 5-7 days</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Gaming Montage / Highlights</div>
+              <div class="plan-price">$130+</div>
+              <div class="art-size">(5-10 minutes)</div>
+              <ul class="plan-features">
+                <li>✅ For gameplay footage</li>
+                <li>✅ Sync with music</li>
+                <li>✅ Funny moments / Memes</li>
+                <li>✅ Smooth transitions & FX</li>
+                <li>✅ 3 Revisions</li>
+                <li>✅ Delivery in 4-6 days</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Video Corporativo / Comercial</div>
+              <div class="plan-price">$220+</div>
+              <div class="art-size">(Up to 2 minutes)</div>
+              <ul class="plan-features">
+                <li>✅ Para empresas y marcas</li>
+                <li>✅ Gráficos y tercios inferiores</li>
+                <li>✅ Música de stock licenciada</li>
+                <li>✅ Corrección de color profesional</li>
+                <li>✅ 4 Revisions</li>
+                <li>✅ Entrega en 7-10 días</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Intro / Outro Animado</div>
+              <div class="plan-price">$75</div>
+              <div class="art-size">(5-15 seconds)</div>
+              <ul class="plan-features">
+                <li>✅ Animación de logo</li>
+                <li>✅ Títulos y gráficos en movimiento</li>
+                <li>✅ Diseño de sonido y música</li>
+                <li>✅ Render en 4K</li>
+                <li>✅ 3 Revisions</li>
+                <li>✅ Archivo fuente (Add-on)</li>
+              </ul>
+              <button class="plan-button">Order Now</button>
+            </div>
+            
+            <div class="pricing-plan">
+              <div class="plan-title">Documentary / Long Form</div>
+              <div class="plan-price">$280+</div>
+              <div class="art-size">(15+ minutes)</div>
+              <ul class="plan-features">
+                <li>✅ In-depth Storytelling Edit</li>
+                <li>✅ Advanced Color/Sound Design</li>
+                <li>✅ Custom Graphics & VFX</li>
+                <li>✅ 5 Revisions</li>
+                <li>✅ Project-based timeline</li>
               </ul>
               <button class="plan-button">Order Now</button>
             </div>
