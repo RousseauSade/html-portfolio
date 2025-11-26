@@ -13,8 +13,8 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  background-color: beige;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+  background-color: #f8f9fa; /* A cleaner, modern background */
 }
 
 * {
@@ -121,6 +121,49 @@ html, body {
   border-radius: 3px;
 }
 
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-card {
+  flex: 1 1 300px;
+  max-width: 450px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid;
+  border-image: linear-gradient(to right, #FFD700, #FDB813) 1; /* Gold gradient border */
+  opacity: 0; /* Initial state for animation */
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Staggered animation delay for cards */
+.about-card:nth-child(1) { animation-delay: 0.1s; }
+.about-card:nth-child(2) { animation-delay: 0.2s; }
+.about-card:nth-child(3) { animation-delay: 0.3s; }
+.about-card:nth-child(4) { animation-delay: 0.4s; }
+
+.about-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .About img {
   display: block;
   margin: 2rem auto;
@@ -136,18 +179,34 @@ html, body {
 
 .About p {
   margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem; /* Slightly larger for better readability */
   text-align: justify;
+  color: #444;
 }
 
 .About strong p {
   text-align: center;
   font-size: 1.2rem;
   color: #444;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 1rem;
-  background-color: rgba(255, 255, 0, 0.1);
-  border-left: 3px solid yellow;
+}
+
+.final-message {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive adjustments */
@@ -345,22 +404,35 @@ footer {
 
   <div class="About">
   <h1>About me</h1>
-  <img src="./Assets/Images/Cooking.gif" alt="Cat programming" height="300" width="300">
-    <p>Hi, I'm Rousseau Sade — a passionate self-taught learner who thrives at the intersection of technology, creativity, and critical thinking.<br>
-      I love programming, reading obsessively, writing, drawing, learning languages, and immersing myself in imaginary worlds through games and stories.</p>
-    
-    <p>I'm currently training as a Full Stack Developer, combining hands-on personal projects with structured learning through platforms like Udemy. <br>
-      I have experience building automation tools with Python, especially for administrative and data-related tasks, and I’m comfortable working with web technologies like HTML, CSS, and JavaScript. <br>
-      I'm driven by the idea of using software not just to build, but to solve real problems and make life easier for others.</p>
+  <img src="./Assets/Images/Cooking.gif" alt="Cat programming" height="250" width="250">
+  <p>Hi, I'm Rousseau Sade — a passionate self-taught learner who thrives at the intersection of technology, creativity, and critical thinking. I love programming, reading obsessively, writing, drawing, learning languages, and immersing myself in imaginary worlds through games and stories.</p>
 
-    <p>I'm passionate about languages and have foundations in German, French, Portuguese, Italian, and Catalan. <br>
-      I'm fueled by curiosity and a constant desire to understand how things work — whether it's a system, a language, or a society.</p>
+  <div class="about-container">
+    <div class="about-card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/845/845668.png" width="28" alt="Code Icon"> Full Stack Development</h2>
+      <p>I'm currently training as a Full Stack Developer, combining personal projects with structured learning on platforms like Udemy. I have experience building automation tools with Python and am comfortable with web technologies like HTML, CSS, and JavaScript. I'm driven by using software to solve real problems and make life easier.</p>
+    </div>
 
-    <p>I'm not chasing perfection — I'm committed to progress. I make mistakes, I learn, and I move forward, because I know every step, <br>
-      even the uncertain ones, brings me closer to who I want to become.</p>
+    <div class="about-card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/3898/3898082.png" width="28" alt="Language Icon"> Languages & Curiosity</h2>
+      <p>I'm passionate about languages and have foundations in German, French, Portuguese, Italian, and Catalan. My curiosity constantly pushes me to understand how things work — whether it's a system, a language, or a society.</p>
+    </div>
 
-  <strong><p>Thanks for reading</p></strong>
-  <img src="./Assets/Images/Trump.gif" alt="Trump Approval">
+    <div class="about-card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/3409/3409560.png" width="28" alt="Philosophy Icon"> My Philosophy</h2>
+      <p>I'm not chasing perfection — I'm committed to progress. I believe in making mistakes, learning from them, and moving forward. Every step, even the uncertain ones, brings me closer to who I want to become.</p>
+    </div>
+
+    <div class="about-card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/1088/1088528.png" width="28" alt="Faith Icon"> Faith & Worldview</h2>
+      <p>My worldview is deeply shaped by my Orthodox Christian faith. This tradition, with its focus on spiritual transformation (theosis), sacred liturgy, and profound mystery, provides the foundation upon which I build my life and aspirations. [1, 2] It is the compass that guides my search for truth and purpose.</p>
+    </div>
+  </div>
+
+  <div class="final-message">
+    <p style="display: flex; justify-content: center;"><strong>Thanks for reading</strong></p>
+    <img src="./Assets/Images/Trump.gif" alt="Trump Approval" width="250">
+  </div>
 </div>
 
 
