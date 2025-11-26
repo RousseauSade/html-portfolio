@@ -342,10 +342,8 @@ footer {
 .stream-wrapper {
   position: relative;
   width: 100%;
-  /* Ajustamos la proporción para dar más altura al chat */
-  padding-top: 75%; /* Proporción 4:3, mejor para video + chat */
-  min-height: 500px; /* Altura mínima para asegurar que el chat sea visible */
-  height: 0;
+  height: 80vh; /* El alto del contenedor será el 70% del alto del viewport */
+  min-height: 700px; /* Altura mínima para asegurar visibilidad en pantallas pequeñas */
   overflow: hidden;
   border-radius: 10px;
 }
@@ -360,7 +358,7 @@ footer {
 
 @media (max-width: 768px) {
   .stream-wrapper {
-    padding-top: 150%; /* Más altura en móviles para que el chat sea usable */
-    min-height: 600px;
+    height: 80vh; /* Aumentamos la altura para móviles */
+    min-height: 600px; /* Mantenemos una altura mínima adecuada */
   }
 }
