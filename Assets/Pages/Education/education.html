@@ -129,7 +129,7 @@
             margin-bottom: 2rem;
             text-align: center;
             color: #fff;
-            text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+            text-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
             position: relative;
             display: inline-block;
             left: 50%;
@@ -143,7 +143,7 @@
             left: 0;
             width: 100%;
             height: 3px;
-            background: yellow;
+            background: linear-gradient(to right, #FFD700, #FDB813);
             transform: scaleX(0);
             transform-origin: right;
             transition: transform 0.5s ease;
@@ -157,7 +157,8 @@
         .Education p {
             text-align: left;
             font-size: 1.2rem;
-            margin-bottom: 3rem;
+            margin: 0 auto 3rem auto;
+            max-width: 800px;
             color: #ddd;
         }
 
@@ -170,13 +171,13 @@
         }
 
         .course-card {
-            background: rgba(20, 20, 20, 0.6);
+            background: rgba(15, 15, 15, 0.7);
             border-radius: 10px;
             padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             opacity: 0;
             transform: translateY(20px);
             animation: cardEntry 0.6s ease-out forwards;
@@ -184,7 +185,7 @@
 
         .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
             border-color: rgba(255, 255, 0, 0.3);
         }
 
@@ -194,7 +195,7 @@
             border-radius: 8px;
             margin-bottom: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .course-card:hover img {
@@ -218,7 +219,7 @@
         .progress-bar-container {
             width: 100%;
             background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 25px;
+            border-radius: 50px;
             margin: 1.5rem 0;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -226,7 +227,7 @@
         .progress-bar {
             height: 20px;
             background: linear-gradient(90deg, #FFD700, #FDB813);
-            border-radius: 25px;
+            border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -238,7 +239,7 @@
 
         .course-link {
             display: inline-block;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             background: rgba(255, 255, 0, 0.2);
             color: yellow;
             text-decoration: none;
@@ -251,6 +252,7 @@
         .course-link:hover {
             background: yellow;
             color: black;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
             transform: translateY(-2px);
         }
 
@@ -463,7 +465,7 @@
 
 <div class="Education">
     <h1>Education</h1>
-    <p>My learning journey through online courses</p>
+    <p style="text-align: center;">This is my self-taught journey through the world of technology and creativity. Each course represents a building block in my skill set, driven by a passion for learning and a desire to build amazing things.</p>
     
     <ul>
         <li class="course-card">
@@ -474,7 +476,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 17%;">17%</div>
             </div>
-            <p>Este curso sentó las bases de mi viaje en el desarrollo web. Aprendí desde HTML, CSS y JavaScript hasta conceptos avanzados de backend con Node.js y bases de datos. Es la razón por la que puedo construir aplicaciones web completas y funcionales desde cero.</p>
+            <p>This foundational course ignited my passion for web development. I dove deep into the essentials, mastering HTML, CSS, and JavaScript before tackling advanced backend technologies like Node.js and databases. This comprehensive training empowers me to build full-fledged, functional web applications from the ground up.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -486,7 +488,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 2%;">2%</div>
             </div>
-            <p>Para mantenerme actualizado, tomé este bootcamp que profundizó en tecnologías modernas como React. Me ayudó a construir aplicaciones dinámicas de una sola página y a usar herramientas como Vite, mejorando mi flujo de trabajo y el rendimiento de mis proyectos.</p>
+            <p>To stay at the cutting edge, I enrolled in this bootcamp to master modern technologies like React. It equipped me to build dynamic single-page applications and leverage powerful tools like Vite, significantly enhancing my workflow and the performance of my projects.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -498,7 +500,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 4%;">4%</div>
             </div>
-            <p>Este curso fue mi puerta de entrada al arte para videojuegos. Aprendí los principios del pixel art, desde el diseño de personajes y la animación hasta la creación de fondos. Esta habilidad ha sido invaluable para mis proyectos de juegos personales y comisiones de arte.</p>
+            <p>This course was my gateway into the world of game art. I learned the core principles of pixel art, from character design and animation to creating immersive backgrounds. This skill has been invaluable for my personal game projects and art commissions.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -510,7 +512,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 13%;">13%</div>
             </div>
-            <p>Aquí perfeccioné mis habilidades en ilustración digital. Aprendí técnicas avanzadas de iluminación, teoría del color y composición, lo que me ha permitido crear obras de arte más profesionales y visualmente impactantes para mi portafolio y contenido en redes.</p>
+            <p>Here, I honed my digital illustration skills. I delved into advanced techniques in lighting, color theory, and composition, enabling me to create more professional and visually stunning artwork for my portfolio and social media content.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -522,7 +524,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 0%;">0%</div>
             </div>
-            <p>Esta guía me enseñó a promocionar eficazmente mis proyectos y contenido. Adquirí conocimientos prácticos en SEO, estrategia de redes sociales y marketing de contenidos, cruciales para hacer crecer mi presencia en línea y conectar con una audiencia más amplia.</p>
+            <p>This guide taught me how to effectively promote my projects and content. I gained practical knowledge in SEO, social media strategy, and content marketing—all crucial for growing my online presence and connecting with a broader audience.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -534,7 +536,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 8%;">8%</div>
             </div>
-            <p>Mi interés por la economía me llevó a este curso, donde aprendí modelado financiero, valoración de empresas y estrategias de inversión. Este conocimiento me ayuda a tomar decisiones informadas y a comprender el lado empresarial de los proyectos creativos y tecnológicos.</p>
+            <p>My interest in economics led me to this course, where I learned financial modeling, company valuation, and investment strategies. This knowledge helps me make informed decisions and understand the business side of creative and technological projects.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -546,7 +548,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 0%;">0%</div>
             </div>
-            <p>Esta masterclass fue esencial para mi hobby de creación de contenido. Dominé la edición de video en Premiere Pro, desde cortes básicos hasta etalonaje avanzado y mezcla de audio. Me permite producir videos de alta calidad para mis canales de redes sociales.</p>
+            <p>This masterclass was essential for my content creation hobby. I mastered video editing in Premiere Pro, from basic cuts to advanced color grading and audio mixing. It allows me to produce high-quality videos for my social media channels.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -558,7 +560,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 0%;">0%</div>
             </div>
-            <p>Combinando mi amor por la programación y los videojuegos, este curso me enseñó a construir un RPG desde cero en Unity. Aprendí programación en C#, diseño de mecánicas de juego y cómo dar vida a un mundo de juego. Es la fusión perfecta de mis habilidades creativas y técnicas.</p>
+            <p>Fusing my love for programming and gaming, this course taught me to build an RPG from scratch in Unity. I learned C# programming, game mechanics design, and how to bring a game world to life. It's the perfect fusion of my creative and technical skills.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -570,7 +572,7 @@
             <div class="progress-bar-container">
                 <div class="progress-bar" style="width: 0%;">0%</div>
             </div>
-            <p>Para compartir mejor mi fe y mi trabajo creativo, estudié estrategias de crecimiento en TikTok. Este curso me proporcionó técnicas prácticas para crear contenido atractivo, entender el algoritmo y construir una comunidad. Ha sido clave para expandir mi alcance e impacto.</p>
+            <p>To better share my faith and creative work, I studied growth strategies on TikTok. This course provided me with practical techniques to create engaging content, understand the algorithm, and build a community. It has been key to expanding my reach and impact.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
     </ul>
