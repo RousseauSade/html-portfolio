@@ -155,7 +155,7 @@
         }
 
         .Education p {
-            text-align: center;
+            text-align: left;
             font-size: 1.2rem;
             margin-bottom: 3rem;
             color: #ddd;
@@ -170,7 +170,7 @@
         }
 
         .course-card {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(20, 20, 20, 0.6);
             border-radius: 10px;
             padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -184,7 +184,7 @@
 
         .course-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 215, 0, 0.2);
             border-color: rgba(255, 255, 0, 0.3);
         }
 
@@ -193,6 +193,7 @@
             height: auto;
             border-radius: 8px;
             margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
         }
 
@@ -211,6 +212,28 @@
             color: #ccc;
             line-height: 1.6;
             margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-bar {
+            height: 20px;
+            background: linear-gradient(90deg, #FFD700, #FDB813);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: black;
+            font-weight: bold;
+            transition: width 0.5s ease-in-out;
         }
 
         .course-link {
@@ -446,27 +469,36 @@
         <li class="course-card">
             <h3>Full Stack Web Developer Course</h3>
             <a href="https://www.udemy.com/share/101qYw3@v-GupS6JwcMSa1SF1rwj5QvHa9vJYFCswAXaEzd8bhKIQfXcsnXM4lPBVFD9Qdw20Q==/" target="_blank">
-                <img src="./Assets/Images/Dr.Angela.png" alt="Dr. Angela Yu">
+                <img src="./Assets/Images/Dr.Angela.png" alt="Dr. Angela Yu Course">
             </a>
-            <p>Welcome to the Complete Web Development Bootcamp, the only course you need to learn to code and become a full-stack web developer. With 150,000+ ratings and a 4.8 average, my Web Development course is one of the HIGHEST RATED courses in the history of Udemy!</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 17%;">17%</div>
+            </div>
+            <p>Este curso sentó las bases de mi viaje en el desarrollo web. Aprendí desde HTML, CSS y JavaScript hasta conceptos avanzados de backend con Node.js y bases de datos. Es la razón por la que puedo construir aplicaciones web completas y funcionales desde cero.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
         <li class="course-card">            
             <h3>The Web Developer Bootcamp 2025</h3>
             <a href="https://www.udemy.com/share/101W923@YV35lZV0duKqraPibdToFJx4OMLvuZW9fOn8ZwPr3vzt2icNpk_QF_hrtt4T7hTFGQ==/" target="_blank">
-                <img src="./Assets/Images//Web.png" alt="Course of Web Development">
+                <img src="./Assets/Images/Web.png" alt="Course of Web Development">
             </a>
-            <p>Massive new React "expansion pack" covers: React basics, JSX, props, state, Vite, MaterialUI, hooks, useEffect, React design patterns, and more. This course was completely overhauled to prepare students for the current job market, now with over 70 hours of total content!</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 2%;">2%</div>
+            </div>
+            <p>Para mantenerme actualizado, tomé este bootcamp que profundizó en tecnologías modernas como React. Me ayudó a construir aplicaciones dinámicas de una sola página y a usar herramientas como Vite, mejorando mi flujo de trabajo y el rendimiento de mis proyectos.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
         <li class="course-card">
             <h3>Pixel Art Master Course</h3>
             <a href="https://www.udemy.com/share/1020ki3@2JGDRt7KQVWH3JWmZ4WnvS1Egqunh9agrnfZifYgsPFK7GBMmTSyFfG-tAr5fGPchw==/" target="_blank">
-                <img src="./Assets/Images//Pixel.png" alt="Course of Pixel Art">
+                <img src="./Assets/Images/Pixel.png" alt="Course of Pixel Art">
             </a>
-            <p>This course teaches everything about pixel art for video games. From the very basics to the advanced techniques. Students will learn about lines, shapes, color theory and harmony, creating a color palette, designing characters, backgrounds, items, making animation and even how to start freelancing.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 4%;">4%</div>
+            </div>
+            <p>Este curso fue mi puerta de entrada al arte para videojuegos. Aprendí los principios del pixel art, desde el diseño de personajes y la animación hasta la creación de fondos. Esta habilidad ha sido invaluable para mis proyectos de juegos personales y comisiones de arte.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -475,7 +507,10 @@
             <a href="https://www.udemy.com/share/101zxg3@Rcc3VOc_QtPLRxOxiZVMXy1CehoqIJJ7EHt9IML-x0GJwM3KO6nPz6ZRdiQichhSCw==/" target="_blank">
                 <img src="./Assets/Images/Digital.png" alt="Course of Digital Painting">
             </a>
-            <p>In this course you will learn how to create digital paintings from scratch. You will learn about the tools, brushes, and techniques used by professional digital artists. The course is designed for beginners, but also includes advanced techniques for those who want to take their skills to the next level.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 13%;">13%</div>
+            </div>
+            <p>Aquí perfeccioné mis habilidades en ilustración digital. Aprendí técnicas avanzadas de iluminación, teoría del color y composición, lo que me ha permitido crear obras de arte más profesionales y visualmente impactantes para mi portafolio y contenido en redes.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -484,7 +519,10 @@
             <a href="https://www.udemy.com/share/101teI3@iOmGYnXj1u3OO8vlrV67QFybxMR41pkYjjybIGcFTDjf_ckbS308NyoqFjT_zJx31g==/" target="_blank">
                 <img src="./Assets/Images/DigitalMarketing.png" alt="Course of Digital Marketing">
             </a>
-            <p>Welcome to the Complete Digital Marketing Course - 27 Courses in 1. This course is designed to take you from a complete beginner to a digital marketing expert. You will learn everything you need to know about digital marketing, including SEO, social media marketing, email marketing, content marketing, and more.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%;">0%</div>
+            </div>
+            <p>Esta guía me enseñó a promocionar eficazmente mis proyectos y contenido. Adquirí conocimientos prácticos en SEO, estrategia de redes sociales y marketing de contenidos, cruciales para hacer crecer mi presencia en línea y conectar con una audiencia más amplia.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -493,7 +531,10 @@
             <a href="https://www.udemy.com/share/101Wi43@U7hdoBhRnMlv7L-Z6Ox0QeLGeWuno05sH97ODgElHX-6iRvUdlbpKqAegK-_W2G__g==/" target="_blank">
                 <img src="./Assets/Images/Financial.png" alt="Course of Financial Analyst">
             </a>
-            <p>Welcome to the Complete Financial Analyst Training & Investing Course. This course is designed to take you from a complete beginner to a financial analyst expert. You will learn everything you need to know about financial analysis, including financial statements, financial modeling, valuation, and more.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 8%;">8%</div>
+            </div>
+            <p>Mi interés por la economía me llevó a este curso, donde aprendí modelado financiero, valoración de empresas y estrategias de inversión. Este conocimiento me ayuda a tomar decisiones informadas y a comprender el lado empresarial de los proyectos creativos y tecnológicos.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -502,7 +543,10 @@
             <a href="https://www.udemy.com/share/101s183@pHWBLTFn8yPtnyWyyhD-8_t4-xFL1YbCoT1ZqUZU75j6J-zBurURtZ93AYBww277Ag==/" target="_blank">
                 <img src="./Assets/Images/Premiere.png" alt="Course of Adobe Premiere Pro">
             </a>
-            <p>Welcome to the Adobe Premiere Pro Masterclass: Video Editing in Premiere. This course is designed to take you from a complete beginner to a video editing expert. You will learn everything you need to know about video editing, including how to use Adobe Premiere Pro, how to edit videos, and how to create professional-looking videos.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%;">0%</div>
+            </div>
+            <p>Esta masterclass fue esencial para mi hobby de creación de contenido. Dominé la edición de video en Premiere Pro, desde cortes básicos hasta etalonaje avanzado y mezcla de audio. Me permite producir videos de alta calidad para mis canales de redes sociales.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -511,7 +555,10 @@
             <a href="https://www.udemy.com/share/101CSc3@WP6uBuGffMMZTlR4C4qEsa6S7TggWYKkRXGHXc9S08ZGeJJAaerkxMdlLQwjq7Ks4Q==/" target="_blank">
                 <img src="./Assets/Images/RPG.png" alt="Course of RPG Game in Unity">
             </a>
-            <p>Welcome to the Learn To Create An RPG Game In Unity. This course is designed to take you from a complete beginner to a game development expert. You will learn everything you need to know about game development, including how to use Unity, how to create 2D and 3D games, and how to create an RPG game.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%;">0%</div>
+            </div>
+            <p>Combinando mi amor por la programación y los videojuegos, este curso me enseñó a construir un RPG desde cero en Unity. Aprendí programación en C#, diseño de mecánicas de juego y cómo dar vida a un mundo de juego. Es la fusión perfecta de mis habilidades creativas y técnicas.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
         
@@ -520,7 +567,10 @@
             <a href="https://www.udemy.com/share/106Lge3@TBMWQtQ5qOgPmYK60RTPZrwNB0jnrWU7dYOUynNGM-o4bw0NrHx9PUGsjdwzTynA3A==/" target="_blank">
                 <img src="./Assets/Images/TikTok.png" alt="Course of TikTok">
             </a>
-            <p>Welcome to the How to Blow Up on TikTok (Growth Hack & Strategies). This course is designed to take you from a complete beginner to a TikTok expert. You will learn everything you need to know about TikTok, including how to create viral content, how to grow your TikTok account, and how to monetize your TikTok account.</p>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 0%;">0%</div>
+            </div>
+            <p>Para compartir mejor mi fe y mi trabajo creativo, estudié estrategias de crecimiento en TikTok. Este curso me proporcionó técnicas prácticas para crear contenido atractivo, entender el algoritmo y construir una comunidad. Ha sido clave para expandir mi alcance e impacto.</p>
             <a href="" class="course-link" target="_blank">Certificate<i class="fas fa-external-link-alt"></i></a>
         </li>
     </ul>
@@ -537,15 +587,6 @@
     });
   });
         
-        // Add smooth scroll to all links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
 </script>
 
 <footer>

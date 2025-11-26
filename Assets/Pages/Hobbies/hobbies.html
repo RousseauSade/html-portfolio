@@ -104,13 +104,14 @@ html, body {
   height: 100%;
   object-fit: cover;
 }
-
+/* Added a gradient to the video to improve text readability */
 .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
 }
 
 /* Hobbies Section */
@@ -128,7 +129,7 @@ html, body {
   text-align: center;
   margin: 2rem 0 3rem;
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
   position: relative;
   padding-bottom: 1rem;
 }
@@ -141,7 +142,7 @@ html, body {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: yellow;
+  background: linear-gradient(90deg, #FFD700, #FDB813);
   border-radius: 3px;
 }
 
@@ -149,7 +150,7 @@ html, body {
   font-size: clamp(1.5rem, 3vw, 2rem);
   margin-top: 3rem;
   color: yellow;
-  text-shadow: 0 0 5px rgba(255, 255, 0, 0.5);
+  text-shadow: 0 0 8px rgba(255, 255, 0, 0.6);
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(255, 255, 0, 0.3);
 }
@@ -157,12 +158,12 @@ html, body {
 .Hobbies p {
   font-size: clamp(1rem, 1.2vw, 1.1rem);
   line-height: 1.6;
-  margin: 1.5rem 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  margin: 1rem 0;
+  background-color: rgba(10, 10, 10, 0.4);
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 3px solid yellow;
-  backdrop-filter: blur(2px);
+  border-left: 4px solid #FFD700;
+  backdrop-filter: blur(3px);
 }
 
 .Hobbies img {
@@ -171,14 +172,14 @@ html, body {
   height: auto;
   margin: 2rem auto;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .Hobbies img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
 }
 
 /* Hobby Grid Layout */
@@ -191,18 +192,20 @@ html, body {
 /* Hobby Items Layout */
 .hobby-item {
   margin-bottom: 4rem;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  background: rgba(20, 20, 20, 0.5);
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.8s ease forwards;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .hobby-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 215, 0, 0.2);
 }
 
 .hobby-item h2 {
@@ -398,51 +401,51 @@ footer {
  <h1>My Hobbies</h1>
  <div class="hobby-grid">
     <div class="hobby-item">
-      <h2>Fe Cristiana Ortodoxa</h2>
-      <p>Mi fe es el ancla de mi vida. En la Ortodoxia Cristiana he encontrado un propósito profundo y una paz que transforma cada día. Dedico mi tiempo a la oración, al estudio de las Escrituras y a la sabiduría de los Padres de la Iglesia.</p>
+      <h2>Orthodox Christian Faith</h2>
+      <p>My faith is the anchor of my life. In Orthodox Christianity, I have found a deep purpose and a peace that transforms each day. I dedicate my time to prayer, the study of the Scriptures, and the wisdom of the Church Fathers.</p>
       <img src="./Assets/Images/Orthodox.gif" alt="Orthodox Church" />
     </div>
 
     <div class="hobby-item">
-      <h2>El Violín</h2>
-      <p>El violín es mi más reciente aventura. Cada nota es un reto que acepto con alegría, buscando expresar la belleza a través de sus cuerdas. Mi meta es tocar himnos que eleven el alma y glorifiquen a Dios.</p>
+      <h2>The Violin</h2>
+      <p>The violin is my most recent adventure. Every note is a challenge I joyfully accept, seeking to express beauty through its strings. My goal is to play hymns that lift the soul and glorify God.</p>
       <img src="./Assets/Images/Violin.gif" alt="Playing the violin" />
     </div>
 
     <div class="hobby-item">
-      <h2>Creación de Contenido</h2>
-      <p>A través de mis redes sociales, comparto mi camino en la fe y mis reflexiones. Es mi forma de usar la tecnología para conectar con otros y compartir la luz y la verdad que he encontrado en Cristo.</p>
+      <h2>Content Creation</h2>
+      <p>Through my social media, I share my faith journey and my reflections. It is my way of using technology to connect with others and share the light and truth I have found in Christ.</p>
       <img src="./Assets/Images/Content.gif" alt="Content Creator" />
     </div>
 
     <div class="hobby-item">
-      <h2>Lectura Profunda</h2>
-      <p>Soy un lector voraz. Me sumerjo en la teología, la filosofía y la fantasía épica como "The Stormlight Archive". Para mí, leer es explorar mundos, tanto los imaginarios como los del pensamiento profundo.</p>
+      <h2>Deep Reading</h2>
+      <p>I am a voracious reader. I immerse myself in theology, philosophy, and epic fantasy like "The Stormlight Archive". For me, reading is exploring worlds, both imaginary ones and those of deep thought.</p>
       <img src="./Assets/Images/Reader.gif" alt="A cat reading a book" />
     </div>
 
     <div class="hobby-item">
-      <h2>Programación Creativa</h2>
-      <p>Me fascina construir herramientas digitales que solucionan problemas reales. Desde automatizar tareas hasta crear pequeños juegos, la programación es mi forma de traer orden y utilidad al mundo digital.</p>
+      <h2>Creative Programming</h2>
+      <p>I am fascinated by building digital tools that solve real problems. From automating tasks to creating small games, programming is my way of bringing order and utility to the digital world.</p>
       <img src="./Assets/Images/Programming.gif" alt="A dude Programming" />
     </div>
 
     <div class="hobby-item">
-      <h2>Videojuegos Inmersivos</h2>
-      <p>Los videojuegos son mi escape a mundos fantásticos. Disfruto perderme en las historias de RPGs como Skyrim, la creatividad de Stardew Valley o las leyendas de la saga de Zelda.</p>
+      <h2>Immersive Video Games</h2>
+      <p>Video games are my escape to fantastic worlds. I enjoy getting lost in the stories of RPGs like Skyrim, the creativity of Stardew Valley, or the legends of the Zelda saga.</p>
       <img src="./Assets/Images/Gamer.gif" alt="Meme of a gamer" />
     </div>
 
     <div class="hobby-item">
-      <h2>Cine con Propósito</h2>
-      <p>Busco en el cine más que entretenimiento; busco historias que inspiren y provoquen reflexión. Desde clásicos atemporales hasta grandes sagas, valoro las películas que dejan una marca duradera.</p>
+      <h2>Cinema with Purpose</h2>
+      <p>In cinema, I seek more than entertainment; I look for stories that inspire and provoke reflection. From timeless classics to grand sagas, I value films that leave a lasting mark.</p>
       <img src="./Assets/Images/Movie.gif" alt="Bob Sponge Eating popcorn" />
     </div>
 
     <div class="hobby-item">
-      <h2>Expresión Artística</h2>
-      <p>Aunque son pasatiempos que practico con menos frecuencia, el dibujo y la escritura son canales importantes para mi creatividad. Son espacios donde puedo dar forma a ideas y sentimientos de manera más personal.</p>
-      <img src="./Assets/Images/Writer.gif" alt="Kermit writing" />
+      <h2>Digital Art</h2>
+      <p>Digital art is my primary channel for creative expression. With a stylus as my brush and a screen as my canvas, I bring ideas to life in a visually dynamic way. It's a space where I can experiment with color, light, and form, creating everything from character designs to intricate illustrations. This hobby allows me to translate my imagination into tangible art and share my personal vision with the world.</p>
+      <img src="./Assets/Images/Writer.gif" alt="Digital Art Creation" />
     </div>
  </div>
 </div>
